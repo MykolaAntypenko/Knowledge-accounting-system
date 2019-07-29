@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <title>Document</title>
+ <link rel="stylesheet" href="style.css">
+</head>
+<body> 
+ <div class="page">
+<h1>Новая страница</h1>
+Начальная точка: <label id="firstPoint"></label><br>
+Конечная точка: <label id="secondPoint"></label><br>
+</div> 
+</body>
+<script type="text/javascript">
+
+window.onload = function(){
+
+  document.getElementById('firstPoint').innerHTML += localStorage.getItem("level1");
+  document.getElementById('secondPoint').innerHTML += localStorage.getItem("skill1");
+ 
+}
+
+</script>
+</html>
