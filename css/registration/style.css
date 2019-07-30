@@ -14,11 +14,15 @@ html {
 }
 
 .registration_page {
-	display: grid;
+	/*display: grid;
 	grid-template-columns: [col1start] 40% [col1end] 0px 
                            [col2start] 60% [col2end];
-    grid-template-rows: [row1start] 1fr [row1end];
+    grid-template-rows: [row1start] 1fr [row1end];*/
     position: fixed;
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: row;
+  flex-wrap: wrap;
   top: 0;
   left: 0;
   width: 100%;
@@ -33,9 +37,7 @@ html {
 	
 
 .form {
-	width: 100%;
-	grid-column: col1start/col1end;
-	grid-row: row1start;
+	width: 40%;
 }
 
   .cb {
@@ -84,10 +86,8 @@ input:hover ~ .help {
 }
 
 .background {
-	width: 100%;
+	width: 60%;
 	height: auto;
-	grid-column: col2start/col2end;
-	grid-row: row1start;
 	display: flex;
 	justify-content: center;
 	align-items: center;

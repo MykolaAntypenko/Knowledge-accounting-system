@@ -1,25 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <meta charset="UTF-8">
- <title>Document</title>
- <link rel="stylesheet" href="style.css">
+	<meta charset="UTF-8">
+	<title>Upgradement</title>
+	<link rel="stylesheet" type="text/css" href="css/training_style.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/target_style.css">
+	<link rel="shortcut icon" href="img/favicon.png"/>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<meta name="keywords" content="Knowledge, Training, Personal Plan, Skills">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="js/accordion.js"></script>
 </head>
-<body> 
- <div class="page">
-<h1>Новая страница</h1>
-Начальная точка: <label id="firstPoint"></label><br>
-Конечная точка: <label id="secondPoint"></label><br>
-</div> 
+<body>
+	<header>
+		<a href="index.html" class="logo"><img src="img/logo.png" alt="Improve your knowledge" class="logo" onmouseover="this.src='img/logo_hover.png';"  
+onmouseout="this.src='img/logo.png';"/></a>
+		<nav class="menu stroke">
+			<ul class="menu__list">
+				<li class="menu__item">
+					<a href="#"  class="btn accordion_menu">My profile</a>
+					<div class="panel_menu">
+  							<a href="#" class="my_knowledge">My knowledge</a>
+                            <a href="training_goal.html" class="my_traininggoal" style="background-color: #131313;">My training goal</a>
+                             <a href="#" class="my_profile">Information</a>
+					</div>
+				</li>
+				<li class="menu__item">
+					<a href="training.html" class="btn">Training</a>
+				</li>
+			</ul>
+			<div class="about">
+				<a href="about_project.html" target="_blank" class="about_project outline-inward">About this project&nbsp;&nbsp;<i class="fa fa-question-circle" aria-hidden="true"></i></a>
+			</div>
+		</nav>
+	</header>
+	<section>
+		<div class="container">
+			<div class="header">
+				<h1 class="training_sign">On this page you can see the training goals you have chosen to further improve your IT skills</h1>
+			</div>
+			<div class="out_data">			
+				<table class="result_target">
+					<thead>	
+					<tr>
+						<th>Your target levels</th>
+						<th>Your target skills</th>
+					</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><div id="list_level"></div></td>
+							<td><div id="list_skill"></div></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+	</section>
 </body>
 <script type="text/javascript">
 
 window.onload = function(){
+	var level_list = window.localStorage.getItem("targetlevel");
+	var skill_list = window.localStorage.getItem("targetskill");
+	document.getElementById('list_level').innerHTML = level_list;
+	document.getElementById('list_skill').innerHTML = skill_list;
+//acordion menu for profile
+	var acc_profile = document.getElementsByClassName("accordion_menu");
+var i;
 
-  document.getElementById('firstPoint').innerHTML += localStorage.getItem("level1");
-  document.getElementById('secondPoint').innerHTML += localStorage.getItem("skill1");
- 
+for (i = 0; i < acc_profile.length; i++) {
+  acc_profile[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel_profile = this.nextElementSibling;
+    panel_profile.style.position = "fixed";
+    panel_profile.style.top = 80 + 'px';
+    panel_profile.style.width = "185px";
+    if (panel_profile.style.maxHeight){
+      panel_profile.style.maxHeight = null;
+    } else {
+      panel_profile.style.maxHeight = 200 + "px";
+    } 
+   
+  });
 }
+}
+
 
 </script>
 </html>

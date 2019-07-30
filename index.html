@@ -2,16 +2,18 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Upgradement</title>
-    <base target="_self" href="index.html" /> 
+	<title>Upgradement</title> 
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/rating.css">
 	<link rel="shortcut icon" href="img/favicon.png"/>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 	<meta name="keywords" content="Knowledge, Training, Personal Plan, Skills">
 	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-	<script type="text/javascript" src="js/accordion.js"></script>
 	<script type="text/javascript" src="js/modal_icon.js"></script>
+
+    <script type="text/javascript" src="js/paginator.js"></script>
+
+
 </head>
 <body>
 	<header>
@@ -22,8 +24,9 @@ onmouseout="this.src='img/logo.png';"/></a>
                 <li class="menu__item">
                     <a href="#"  class="btn accordion_menu">My profile</a>
                     <div class="panel_menu">
-                            <a href="#" class="my_knowledge">My knowledge</a>
-                            <a href="#" class="my_traininggoal">My training goal</a>
+                            <a href="knowledge.html" class="my_knowledge">My knowledge</a>
+                            <a href="training_goal.html" class="my_traininggoal">My training goal</a>
+                             <a href="#" class="my_profile">Information</a>
                     </div>
                 </li>
                 <li class="menu__item">
@@ -59,7 +62,7 @@ onmouseout="this.src='img/logo.png';"/></a>
             <h2> Choose professional skills</h2>
             <br>  
 			<select class='select-button__select select_skill' id="skill">
-				<optgroup label="Programming languages">
+				<optgroup label="Programming languages" style="color=#1E90FF;">
                 	<option>ABAP</option>
                 	<option>C#</option>
                 	<option>C/C++</option>
@@ -78,7 +81,7 @@ onmouseout="this.src='img/logo.png';"/></a>
                 	<option>VB</option>
                 	<option>XML/XSL/XSLT</option>
                 	</optgroup>
-                	<optgroup label="Operating Systems">
+                	<optgroup label="Operating Systems" style="color=#1E90FF;">
                 	<option>Android</option>
                 	<option>BlackBerry</option>
                 	<option>iOS</option>
@@ -87,7 +90,7 @@ onmouseout="this.src='img/logo.png';"/></a>
                 	<option>Windows</option>
                 	<option>Windows Phone</option>
                 	</optgroup>
-                	<optgroup label="Platforms">
+                	<optgroup label="Platforms" style="color=#1E90FF;">
                 	<option>AMAZON</option>
                 	<option>ATG</option>
                 	<option>AZURE</option>
@@ -100,7 +103,7 @@ onmouseout="this.src='img/logo.png';"/></a>
                 	<option>Tibco</option>
                 	<option>WS Commerce</option>
                 	</optgroup>
-                	<optgroup label="Databases">
+                	<optgroup label="Databases" style="color=#1E90FF;">
                 	<option>Microsoft SQL Server</option>
                 	<option>Oracle</option>
                 	<option>PostgreSQL</option>
@@ -116,10 +119,6 @@ onmouseout="this.src='img/logo.png';"/></a>
                 	<button class="cancel">Cancel</button>
                 </div>
                	<div id="savemessage">	</div>
-               	<div class="result">
-	               	<div id="result1">	</div>
-	               	<div id="result2">	</div>
-	            </div>
             </div>
 
 			</div>
@@ -150,712 +149,746 @@ onmouseout="this.src='img/logo.png';"/></a>
 				</div>
 			</div>
 		</div>
-		
-			<div class="block1">	
+
+        <div class="pagination">
+            <button id="programs" autofocus>Programing languages</button>
+            <button id="operating">Operating systems</button>
+            <button id="platforms">Platforms</button>
+            <button id="databases">Databases</button>
+        </div>
+			<div class="block1" id="blocker1">	
 				<p class="title_skills">Programming languages</p>
 				<div class="block_program">
-					<div>	
+					<div data-num=1 class="num">	
 						<p class="skill">ABAP</p>
 						<div class="star-rating">
       						<div class="star-rating__wrap">
-       								 <input class="star-rating__input1" id="star-rating-51" type="radio" name="rating1" value="5">
+       								 <input class="star-rating__input1" id="star-rating-51" type="radio" name="rating1" value="Expert">
         							<label class="star-rating__ico1 rating-item1" for="star-rating-51" tooltip = "Expert"><img src="img/rating5.png" class="rating_picture"></label>
-       								 <input class="star-rating__input1" id="star-rating-41" type="radio" name="rating1" value="4">
+       								 <input class="star-rating__input1" id="star-rating-41" type="radio" name="rating1" value="Advanced">
         							<label class="star-rating__ico1 rating-item1" for="star-rating-41" tooltip = "Advanced"><img src="img/rating4.png" class="rating_picture"></label>
-        							<input class="star-rating__input1" id="star-rating-31" type="radio" name="rating1" value="3">
+        							<input class="star-rating__input1" id="star-rating-31" type="radio" name="rating1" value="Experienced">
         							<label class="star-rating__ico1 rating-item1" for="star-rating-31" tooltip = "Experienced"><img src="img/rating3.png" class="rating_picture"></label>
-        							<input class="star-rating__input1" id="star-rating-21" type="radio" name="rating1" value="2">
+        							<input class="star-rating__input1" id="star-rating-21" type="radio" name="rating1" value="Medium">
         							<label class="star-rating__ico1 rating-item1" for="star-rating-21" tooltip = "Medium"><img src="img/rating2.png" class="rating_picture"></label>
-        							<input class="star-rating__input1" id="star-rating-11" type="radio" name="rating1" value="1">
+        							<input class="star-rating__input1" id="star-rating-11" type="radio" name="rating1" value="Newcomer">
         							<label class="star-rating__ico1 rating-item1" for="star-rating-11" tooltip = "Newcomer" ><img src="img/rating1.png" class="rating_picture"></label>
       							</div>
     						</div>
 						
 					</div>
-					<div>	
+					<div data-num=2 class="num">	
 						<p class="skill">C#</p>
 						<div class="star-rating">
       						<div class="star-rating__wrap">
-       								 <input class="star-rating__input2" id="star-rating-52" type="radio" name="rating2" value="5">
+       								 <input class="star-rating__input2" id="star-rating-52" type="checkbox" name="rating2" value="Expert">
         							<label class="star-rating__ico2 rating-item2" for="star-rating-52" tooltip = "Expert"><img src="img/rating5.png" class="rating_picture"></label>
-       								 <input class="star-rating__input2" id="star-rating-42" type="radio" name="rating2" value="4">
+       								 <input class="star-rating__input2" id="star-rating-42" type="checkbox" name="rating2" value="Advanced">
         							<label class="star-rating__ico2 rating-item2" for="star-rating-42" tooltip = "Advanced"><img src="img/rating4.png" class="rating_picture"></label>
-        							<input class="star-rating__input2" id="star-rating-32" type="radio" name="rating2" value="3">
+        							<input class="star-rating__input2" id="star-rating-32" type="checkbox" name="rating2" value="Experienced">
         							<label class="star-rating__ico2 rating-item2" for="star-rating-32" tooltip = "Experienced"><img src="img/rating3.png" class="rating_picture"></label>
-        							<input class="star-rating__input2" id="star-rating-22" type="radio" name="rating2" value="2">
+        							<input class="star-rating__input2" id="star-rating-22" type="checkbox" name="rating2" value="Medium">
         							<label class="star-rating__ico2 rating-item2" for="star-rating-22" tooltip = "Medium"><img src="img/rating2.png" class="rating_picture"></label>
-        							<input class="star-rating__input2" id="star-rating-12" type="radio" name="rating2" value="1">
+        							<input class="star-rating__input2" id="star-rating-12" type="checkbox" name="rating2" value="Newcomer">
         							<label class="star-rating__ico2 rating-item2" for="star-rating-12" tooltip = "Newcomer" ><img src="img/rating1.png" class="rating_picture"></label>
       							</div>
     						</div>
 					</div>
-					<div>	
+					<div data-num=3 class="num">	
 						<p class="skill">C/C++</p>
 						<div class="star-rating">
       						<div class="star-rating__wrap">
-       								  <input class="star-rating__input3" id="star-rating-53" type="radio" name="rating3" value="5">
+       								  <input class="star-rating__input3" id="star-rating-53" type="radio" name="rating3" value="Expert">
         							<label class="star-rating__ico3 rating-item3" for="star-rating-53" tooltip = "Expert"><img src="img/rating5.png" class="rating_picture"></label>
-       								 <input class="star-rating__input3" id="star-rating-43" type="radio" name="rating3" value="4">
+       								 <input class="star-rating__input3" id="star-rating-43" type="radio" name="rating3" value="Advanced">
         							<label class="star-rating__ico3 rating-item3" for="star-rating-43" tooltip = "Advanced"><img src="img/rating4.png" class="rating_picture"></label>
-        							<input class="star-rating__input3" id="star-rating-33" type="radio" name="rating3" value="3">
+        							<input class="star-rating__input3" id="star-rating-33" type="radio" name="rating3" value="Experienced">
         							<label class="star-rating__ico3 rating-item3" for="star-rating-33" tooltip = "Experienced"><img src="img/rating3.png" class="rating_picture"></label>
-        							<input class="star-rating__input3" id="star-rating-23" type="radio" name="rating3" value="2">
+        							<input class="star-rating__input3" id="star-rating-23" type="radio" name="rating3" value="Medium">
         							<label class="star-rating__ico3 rating-item3" for="star-rating-23" tooltip = "Medium"><img src="img/rating2.png" class="rating_picture"></label>
-        							<input class="star-rating__input3" id="star-rating-13" type="radio" name="rating3" value="1">
+        							<input class="star-rating__input3" id="star-rating-13" type="radio" name="rating3" value="Newcomer">
         							<label class="star-rating__ico3 rating-item3" for="star-rating-13" tooltip = "Newcomer" ><img src="img/rating1.png" class="rating_picture"></label>
       							</div>
     						</div>
 					</div>
-					<div>	
+					<div data-num=4 class="num">	
 						<p class="skill">COBOL</p>
 						<div class="star-rating">
       						<div class="star-rating__wrap">
-       								 <input class="star-rating__input4" id="star-rating-54" type="radio" name="rating4" value="5">
+       								 <input class="star-rating__input4" id="star-rating-54" type="radio" name="rating4" value="Expert">
         							<label class="star-rating__ico4 rating-item4" for="star-rating-54" tooltip = "Expert"><img src="img/rating5.png" class="rating_picture"></label>
-       								 <input class="star-rating__input4" id="star-rating-44" type="radio" name="rating4" value="4">
+       								 <input class="star-rating__input4" id="star-rating-44" type="radio" name="rating4" value="Advanced">
         							<label class="star-rating__ico4 rating-item4" for="star-rating-44" tooltip = "Advanced"><img src="img/rating4.png" class="rating_picture"></label>
-        							<input class="star-rating__input4" id="star-rating-34" type="radio" name="rating4" value="3">
+        							<input class="star-rating__input4" id="star-rating-34" type="radio" name="rating4" value="Experienced">
         							<label class="star-rating__ico4 rating-item4" for="star-rating-34" tooltip = "Experienced"><img src="img/rating3.png" class="rating_picture"></label>
-        							<input class="star-rating__input4" id="star-rating-24" type="radio" name="rating4" value="2">
+        							<input class="star-rating__input4" id="star-rating-24" type="radio" name="rating4" value="Medium">
         							<label class="star-rating__ico4 rating-item4" for="star-rating-24" tooltip = "Medium"><img src="img/rating2.png" class="rating_picture"></label>
-        							<input class="star-rating__input4" id="star-rating-14" type="radio" name="rating4" value="1">
+        							<input class="star-rating__input4" id="star-rating-14" type="radio" name="rating4" value="Newcomer">
         							<label class="star-rating__ico4 rating-item4" for="star-rating-14" tooltip = "Newcomer" ><img src="img/rating1.png" class="rating_picture"></label>
       							</div>
     						</div>
 					</div>
-					<div>	
+					<div data-num=5 class="num">	
 						<p class="skill">Delphi</p>
 						<div class="star-rating">
       						<div class="star-rating__wrap">
-       								 <input class="star-rating__input5" id="star-rating-55" type="radio" name="rating5" value="5">
+       								 <input class="star-rating__input5" id="star-rating-55" type="radio" name="rating5" value="Expert">
         							<label class="star-rating__ico5 rating-item5" for="star-rating-55" tooltip = "Expert"><img src="img/rating5.png" class="rating_picture"></label>
-       								 <input class="star-rating__input5" id="star-rating-45" type="radio" name="rating5" value="4">
+       								 <input class="star-rating__input5" id="star-rating-45" type="radio" name="rating5" value="Advanced">
         							<label class="star-rating__ico5 rating-item5" for="star-rating-45" tooltip = "Advanced"><img src="img/rating4.png" class="rating_picture"></label>
-        							<input class="star-rating__input5" id="star-rating-35" type="radio" name="rating5" value="3">
+        							<input class="star-rating__input5" id="star-rating-35" type="radio" name="rating5" value="Experienced">
         							<label class="star-rating__ico5 rating-item5" for="star-rating-35" tooltip = "Experienced"><img src="img/rating3.png" class="rating_picture"></label>
-        							<input class="star-rating__input5" id="star-rating-25" type="radio" name="rating5" value="2">
+        							<input class="star-rating__input5" id="star-rating-25" type="radio" name="rating5" value="Medium">
         							<label class="star-rating__ico5 rating-item5" for="star-rating-25" tooltip = "Medium"><img src="img/rating2.png" class="rating_picture"></label>
-        							<input class="star-rating__input5" id="star-rating-15" type="radio" name="rating5" value="1">
+        							<input class="star-rating__input5" id="star-rating-15" type="radio" name="rating5" value="Newcomer">
         							<label class="star-rating__ico5 rating-item5" for="star-rating-15" tooltip = "Newcomer" ><img src="img/rating1.png" class="rating_picture"></label>
       							</div>
     						</div>
 					</div>
-					<div>	
+					<div data-num=6 class="num">	
 						<p class="skill">Flash</p>
 						<div class="star-rating">
       						<div class="star-rating__wrap">
-       								 <input class="star-rating__input6" id="star-rating-56" type="radio" name="rating6" value="5">
+       								 <input class="star-rating__input6" id="star-rating-56" type="radio" name="rating6" value="Expert">
         							<label class="star-rating__ico6 rating-item6" for="star-rating-56" tooltip = "Expert"><img src="img/rating5.png" class="rating_picture"></label>
-       								 <input class="star-rating__input6" id="star-rating-46" type="radio" name="rating6" value="4">
+       								 <input class="star-rating__input6" id="star-rating-46" type="radio" name="rating6" value="Advanced">
         							<label class="star-rating__ico6 rating-item6" for="star-rating-46" tooltip = "Advanced"><img src="img/rating4.png" class="rating_picture"></label>
-        							<input class="star-rating__input6" id="star-rating-36" type="radio" name="rating6" value="3">
+        							<input class="star-rating__input6" id="star-rating-36" type="radio" name="rating6" value="Experienced">
         							<label class="star-rating__ico6 rating-item6" for="star-rating-36" tooltip = "Experienced"><img src="img/rating3.png" class="rating_picture"></label>
-        							<input class="star-rating__input6" id="star-rating-26" type="radio" name="rating6" value="2">
+        							<input class="star-rating__input6" id="star-rating-26" type="radio" name="rating6" value="Medium">
         							<label class="star-rating__ico6 rating-item6" for="star-rating-26" tooltip = "Medium"><img src="img/rating2.png" class="rating_picture"></label>
-        							<input class="star-rating__input6" id="star-rating-16" type="radio" name="rating6" value="1">
+        							<input class="star-rating__input6" id="star-rating-16" type="radio" name="rating6" value="Newcomer">
         							<label class="star-rating__ico6 rating-item6" for="star-rating-16" tooltip = "Newcomer" ><img src="img/rating1.png" class="rating_picture"></label>
       							</div>
     						</div>
 					</div>
-					<div>	
+					<div data-num=7 class="num">	
 						<p class="skill">Flex</p>
 						<div class="star-rating">
       						<div class="star-rating__wrap">
-       								 <input class="star-rating__input7" id="star-rating-57" type="radio" name="rating7" value="5">
+       								 <input class="star-rating__input7" id="star-rating-57" type="radio" name="rating7" value="Expert">
         							<label class="star-rating__ico7 rating-item7" for="star-rating-57" tooltip = "Expert"><img src="img/rating5.png" class="rating_picture"></label>
-       								 <input class="star-rating__input7" id="star-rating-4" type="radio" name="rating7" value="4">
+       								 <input class="star-rating__input7" id="star-rating-4" type="radio" name="rating7" value="Advanced">
         							<label class="star-rating__ico7 rating-item7" for="star-rating-47" tooltip = "Advanced"><img src="img/rating4.png" class="rating_picture"></label>
-        							<input class="star-rating__input7" id="star-rating-37" type="radio" name="rating7" value="3">
+        							<input class="star-rating__input7" id="star-rating-37" type="radio" name="rating7" value="Experienced">
         							<label class="star-rating__ico7 rating-item7" for="star-rating-37" tooltip = "Experienced"><img src="img/rating3.png" class="rating_picture"></label>
-        							<input class="star-rating__input7" id="star-rating-27" type="radio" name="rating7" value="2">
+        							<input class="star-rating__input7" id="star-rating-27" type="radio" name="rating7" value="Medium">
         							<label class="star-rating__ico7 rating-item7" for="star-rating-27" tooltip = "Medium"><img src="img/rating2.png" class="rating_picture"></label>
-        							<input class="star-rating__input7" id="star-rating-17" type="radio" name="rating7" value="1">
+        							<input class="star-rating__input7" id="star-rating-17" type="radio" name="rating7" value="Newcomer">
         							<label class="star-rating__ico7 rating-item7" for="star-rating-17" tooltip = "Newcomer" ><img src="img/rating1.png" class="rating_picture"></label>
       							</div>
     						</div>
 					</div>
-					<div>	
+					<div data-num=8 class="num">	
 						<p class="skill">Java</p>
 						<div class="star-rating">
       						<div class="star-rating__wrap">
-       								 <input class="star-rating__input8" id="star-rating-58" type="radio" name="rating8" value="5">
+       								 <input class="star-rating__input8" id="star-rating-58" type="radio" name="rating8" value="Expert">
         							<label class="star-rating__ico8 rating-item8" for="star-rating-58" tooltip = "Expert"><img src="img/rating5.png" class="rating_picture"></label>
-       								 <input class="star-rating__input8" id="star-rating-48" type="radio" name="rating8" value="4">
+       								 <input class="star-rating__input8" id="star-rating-48" type="radio" name="rating8" value="Advanced">
         							<label class="star-rating__ico8 rating-item8" for="star-rating-48" tooltip = "Advanced"><img src="img/rating4.png" class="rating_picture"></label>
-        							<input class="star-rating__input8" id="star-rating-38" type="radio" name="rating8" value="3">
+        							<input class="star-rating__input8" id="star-rating-38" type="radio" name="rating8" value="Experienced">
         							<label class="star-rating__ico8 rating-item8" for="star-rating-38" tooltip = "Experienced"><img src="img/rating3.png" class="rating_picture"></label>
-        							<input class="star-rating__input8" id="star-rating-28" type="radio" name="rating8" value="2">
+        							<input class="star-rating__input8" id="star-rating-28" type="radio" name="rating8" value="Medium">
         							<label class="star-rating__ico8 rating-item8" for="star-rating-28" tooltip = "Medium"><img src="img/rating2.png" class="rating_picture"></label>
-        							<input class="star-rating__input8" id="star-rating-18" type="radio" name="rating8" value="1">
+        							<input class="star-rating__input8" id="star-rating-18" type="radio" name="rating8" value="Newcomer">
         							<label class="star-rating__ico8 rating-item8" for="star-rating-18" tooltip = "Newcomer" ><img src="img/rating1.png" class="rating_picture"></label>
       							</div>
     						</div>
 					</div>
-					<div>	
+					<div data-num=9 class="num">	
 						<p class="skill">JavaScript / HTML / CSS</p>
 						<div class="star-rating">
       						<div class="star-rating__wrap">
-       								 <input class="star-rating__input9" id="star-rating-59" type="radio" name="rating9" value="5">
+       								 <input class="star-rating__input9" id="star-rating-59" type="radio" name="rating9" value="Expert">
         							<label class="star-rating__ico9 rating-item9" for="star-rating-59" tooltip = "Expert"><img src="img/rating5.png" class="rating_picture"></label>
-       								 <input class="star-rating__input9" id="star-rating-49" type="radio" name="rating9" value="4">
+       								 <input class="star-rating__input9" id="star-rating-49" type="radio" name="rating9" value="Advanced">
         							<label class="star-rating__ico9 rating-item9" for="star-rating-49" tooltip = "Advanced"><img src="img/rating4.png" class="rating_picture"></label>
-        							<input class="star-rating__input9" id="star-rating-39" type="radio" name="rating9" value="3">
+        							<input class="star-rating__input9" id="star-rating-39" type="radio" name="rating9" value="Experienced">
         							<label class="star-rating__ico9 rating-item9" for="star-rating-39" tooltip = "Experienced"><img src="img/rating3.png" class="rating_picture"></label>
-        							<input class="star-rating__input9" id="star-rating-29" type="radio" name="rating9" value="2">
+        							<input class="star-rating__input9" id="star-rating-29" type="radio" name="rating9" value="Medium">
         							<label class="star-rating__ico9 rating-item9" for="star-rating-29" tooltip = "Medium"><img src="img/rating2.png" class="rating_picture"></label>
-        							<input class="star-rating__input9" id="star-rating-19" type="radio" name="rating9" value="1">
+        							<input class="star-rating__input9" id="star-rating-19" type="radio" name="rating9" value="Newcomer">
         							<label class="star-rating__ico9 rating-item9" for="star-rating-19" tooltip = "Newcomer" ><img src="img/rating1.png" class="rating_picture"></label>
       							</div>
     						</div>
 					</div>
-					<div>	
+					<div data-num=10 class="num">	
 						<p class="skill">Perl</p>
 						<div class="star-rating">
       						<div class="star-rating__wrap">
-       								 <input class="star-rating__input10" id="star-rating-510" type="radio" name="rating10" value="5">
+       								 <input class="star-rating__input10" id="star-rating-510" type="radio" name="rating10" value="Expert">
         							<label class="star-rating__ico10 rating-item10" for="star-rating-510" tooltip = "Expert"><img src="img/rating5.png" class="rating_picture"></label>
-       								 <input class="star-rating__input10" id="star-rating-410" type="radio" name="rating10" value="4">
+       								 <input class="star-rating__input10" id="star-rating-410" type="radio" name="rating10" value="Advanced">
         							<label class="star-rating__ico10 rating-item10" for="star-rating-410" tooltip = "Advanced"><img src="img/rating4.png" class="rating_picture"></label>
-        							<input class="star-rating__input10" id="star-rating-310" type="radio" name="rating10" value="3">
+        							<input class="star-rating__input10" id="star-rating-310" type="radio" name="rating10" value="Experienced">
         							<label class="star-rating__ico10 rating-item10" for="star-rating-310" tooltip = "Experienced"><img src="img/rating3.png" class="rating_picture"></label>
-        							<input class="star-rating__input10" id="star-rating-210" type="radio" name="rating10" value="2">
+        							<input class="star-rating__input10" id="star-rating-210" type="radio" name="rating10" value="Medium">
         							<label class="star-rating__ico10 rating-item10" for="star-rating-210" tooltip = "Medium"><img src="img/rating2.png" class="rating_picture"></label>
-        							<input class="star-rating__input10" id="star-rating-110" type="radio" name="rating10" value="1">
+        							<input class="star-rating__input10" id="star-rating-110" type="radio" name="rating10" value="Newcomer">
         							<label class="star-rating__ico10 rating-item10" for="star-rating-110" tooltip = "Newcomer" ><img src="img/rating1.png" class="rating_picture"></label>
       							</div>
     						</div>
 					</div>
-					<div>	
+					<div data-num=11 class="num">	
 						<p class="skill">PHP</p>
 						<div class="star-rating">
       						<div class="star-rating__wrap">
-       								 <input class="star-rating__input11" id="star-rating-511" type="radio" name="rating11" value="5">
+       								 <input class="star-rating__input11" id="star-rating-511" type="radio" name="rating11" value="Expert">
         							<label class="star-rating__ico11 rating-item11" for="star-rating-511" tooltip = "Expert"><img src="img/rating5.png" class="rating_picture"></label>
-       								 <input class="star-rating__input11" id="star-rating-411" type="radio" name="rating11" value="4">
+       								 <input class="star-rating__input11" id="star-rating-411" type="radio" name="rating11" value="Advanced">
         							<label class="star-rating__ico11 rating-item11" for="star-rating-411" tooltip = "Advanced"><img src="img/rating4.png" class="rating_picture"></label>
-        							<input class="star-rating__input11" id="star-rating-311" type="radio" name="rating11" value="3">
+        							<input class="star-rating__input11" id="star-rating-311" type="radio" name="rating11" value="Experienced">
         							<label class="star-rating__ico11 rating-item11" for="star-rating-311" tooltip = "Experienced"><img src="img/rating3.png" class="rating_picture"></label>
-        							<input class="star-rating__input11" id="star-rating-211" type="radio" name="rating11" value="2">
+        							<input class="star-rating__input11" id="star-rating-211" type="radio" name="rating11" value="Medium">
         							<label class="star-rating__ico11 rating-item11" for="star-rating-211" tooltip = "Medium"><img src="img/rating2.png" class="rating_picture"></label>
-        							<input class="star-rating__input11" id="star-rating-111" type="radio" name="rating11" value="1">
+        							<input class="star-rating__input11" id="star-rating-111" type="radio" name="rating11" value="Newcomer">
         							<label class="star-rating__ico11 rating-item11" for="star-rating-111" tooltip = "Newcomer" ><img src="img/rating1.png" class="rating_picture"></label>
       							</div>
     						</div>
 					</div>
-					<div>	
+					<div data-num=12 class="num">	
 						<p class="skill">PL/SQL</p>
 						<div class="star-rating">
       						<div class="star-rating__wrap">
-       								 <input class="star-rating__input12" id="star-rating-512" type="radio" name="rating12" value="5">
+       								 <input class="star-rating__input12" id="star-rating-512" type="radio" name="rating12" value="Expert">
         							<label class="star-rating__ico12 rating-item12" for="star-rating-512" tooltip = "Expert"><img src="img/rating5.png" class="rating_picture"></label>
-       								 <input class="star-rating__input12" id="star-rating-412" type="radio" name="rating12" value="4">
+       								 <input class="star-rating__input12" id="star-rating-412" type="radio" name="rating12" value="Advanced">
         							<label class="star-rating__ico12 rating-item12" for="star-rating-412" tooltip = "Advanced"><img src="img/rating4.png" class="rating_picture"></label>
-        							<input class="star-rating__input12" id="star-rating-312" type="radio" name="rating12" value="3">
+        							<input class="star-rating__input12" id="star-rating-312" type="radio" name="rating12" value="Experienced">
         							<label class="star-rating__ico12 rating-item12" for="star-rating-312" tooltip = "Experienced"><img src="img/rating3.png" class="rating_picture"></label>
-        							<input class="star-rating__input12" id="star-rating-212" type="radio" name="rating12" value="2">
+        							<input class="star-rating__input12" id="star-rating-212" type="radio" name="rating12" value="Medium">
         							<label class="star-rating__ico12 rating-item12" for="star-rating-212" tooltip = "Medium"><img src="img/rating2.png" class="rating_picture"></label>
-        							<input class="star-rating__input12" id="star-rating-112" type="radio" name="rating12" value="1">
+        							<input class="star-rating__input12" id="star-rating-112" type="radio" name="rating12" value="Newcomer">
         							<label class="star-rating__ico12 rating-item12" for="star-rating-112" tooltip = "Newcomer" ><img src="img/rating1.png" class="rating_picture"></label>
       							</div>
     						</div>
 					</div>
-					<div>	
+					<div data-num=13 class="num">	
 						<p class="skill">Python</p>
 						<div class="star-rating">
       						<div class="star-rating__wrap">
-       								 <input class="star-rating__input13" id="star-rating-513" type="radio" name="rating13" value="5">
+       								 <input class="star-rating__input13" id="star-rating-513" type="radio" name="rating13" value="Expert">
         							<label class="star-rating__ico13 rating-item13" for="star-rating-513" tooltip = "Expert"><img src="img/rating5.png" class="rating_picture"></label>
-       								 <input class="star-rating__input13" id="star-rating-413" type="radio" name="rating13" value="4">
+       								 <input class="star-rating__input13" id="star-rating-413" type="radio" name="rating13" value="Advanced">
         							<label class="star-rating__ico13 rating-item13" for="star-rating-413" tooltip = "Advanced"><img src="img/rating4.png" class="rating_picture"></label>
-        							<input class="star-rating__input13" id="star-rating-313" type="radio" name="rating13" value="3">
+        							<input class="star-rating__input13" id="star-rating-313" type="radio" name="rating13" value="Experienced">
         							<label class="star-rating__ico13 rating-item13" for="star-rating-313" tooltip = "Experienced"><img src="img/rating3.png" class="rating_picture"></label>
-        							<input class="star-rating__input13" id="star-rating-213" type="radio" name="rating13" value="2">
+        							<input class="star-rating__input13" id="star-rating-213" type="radio" name="rating13" value="Medium">
         							<label class="star-rating__ico13 rating-item13" for="star-rating-213" tooltip = "Medium"><img src="img/rating2.png" class="rating_picture"></label>
-        							<input class="star-rating__input13" id="star-rating-113" type="radio" name="rating13" value="1">
+        							<input class="star-rating__input13" id="star-rating-113" type="radio" name="rating13" value="Newcomer">
         							<label class="star-rating__ico13 rating-item13" for="star-rating-113" tooltip = "Newcomer" ><img src="img/rating1.png" class="rating_picture"></label>
       							</div>
     						</div>
 					</div>
-					<div>	
+					<div data-num=14 class="num">	
 						<p class="skill">Ruby</p>
 						<div class="star-rating">
       						<div class="star-rating__wrap">
-       								 <input class="star-rating__input14" id="star-rating-514" type="radio" name="rating14" value="5">
+       								 <input class="star-rating__input14" id="star-rating-514" type="radio" name="rating14" value="Expert">
         							<label class="star-rating__ico14 rating-item14" for="star-rating-514" tooltip = "Expert"><img src="img/rating5.png" class="rating_picture"></label>
-       								 <input class="star-rating__input14" id="star-rating-414" type="radio" name="rating14" value="4">
+       								 <input class="star-rating__input14" id="star-rating-414" type="radio" name="rating14" value="Advanced">
         							<label class="star-rating__ico14 rating-item14" for="star-rating-414" tooltip= "Advanced"><img src="img/rating4.png" class="rating_picture"></label>
-        							<input class="star-rating__input14" id="star-rating-314" type="radio" name="rating14" value="3">
+        							<input class="star-rating__input14" id="star-rating-314" type="radio" name="rating14" value="Experienced">
         							<label class="star-rating__ico14 rating-item14" for="star-rating-314" tooltip = "Experienced"><img src="img/rating3.png" class="rating_picture"></label>
-        							<input class="star-rating__input14" id="star-rating-214" type="radio" name="rating14" value="2">
+        							<input class="star-rating__input14" id="star-rating-214" type="radio" name="rating14" value="Medium">
         							<label class="star-rating__ico14 rating-item14" for="star-rating-214" tooltip = "Medium"><img src="img/rating2.png" class="rating_picture"></label>
-        							<input class="star-rating__input14" id="star-rating-114" type="radio" name="rating14" value="1">
+        							<input class="star-rating__input14" id="star-rating-114" type="radio" name="rating14" value="Newcomer">
         							<label class="star-rating__ico14 rating-item14" for="star-rating-114" tooltip = "Newcomer" ><img src="img/rating1.png" class="rating_picture"></label>
       							</div>
     						</div>
 					</div>
-					<div>	
+					<div data-num=15 class="num">	
 						<p class="skill">SQL</p>
 						<div class="star-rating">
       						<div class="star-rating__wrap">
-       								 <input class="star-rating__input15" id="star-rating-515" type="radio" name="rating15" value="5">
+       								 <input class="star-rating__input15" id="star-rating-515" type="radio" name="rating15" value="Expert">
         							<label class="star-rating__ico15 rating-item15" for="star-rating-515" tooltip = "Expert"><img src="img/rating5.png" class="rating_picture"></label>
-       								 <input class="star-rating__input15" id="star-rating-415" type="radio" name="rating15" value="4">
+       								 <input class="star-rating__input15" id="star-rating-415" type="radio" name="rating15" value="Advanced">
         							<label class="star-rating__ico15 rating-item15" for="star-rating-415" tooltip = "Advanced"><img src="img/rating4.png" class="rating_picture"></label>
-        							<input class="star-rating__input15" id="star-rating-315" type="radio" name="rating15" value="3">
+        							<input class="star-rating__input15" id="star-rating-315" type="radio" name="rating15" value="Experienced">
         							<label class="star-rating__ico15 rating-item15" for="star-rating-315" tooltip = "Experienced"><img src="img/rating3.png" class="rating_picture"></label>
-        							<input class="star-rating__input15" id="star-rating-215" type="radio" name="rating15" value="2">
+        							<input class="star-rating__input15" id="star-rating-215" type="radio" name="rating15" value="Medium">
         							<label class="star-rating__ico15 rating-item15" for="star-rating-215" tooltip = "Medium"><img src="img/rating2.png" class="rating_picture"></label>
-        							<input class="star-rating__input15" id="star-rating-115" type="radio" name="rating15" value="1">
+        							<input class="star-rating__input15" id="star-rating-115" type="radio" name="rating15" value="Newcomer">
         							<label class="star-rating__ico15 rating-item15" for="star-rating-115" tooltip = "Newcomer" ><img src="img/rating1.png" class="rating_picture"></label>
       							</div>
     						</div>
 					</div>
-					<div>	
+					<div data-num=16 class="num">	
 						<p class="skill">VB</p>
 						<div class="star-rating">
       						<div class="star-rating__wrap">
-       								 <input class="star-rating__input16" id="star-rating-516" type="radio" name="rating16" value="5">
+       								 <input class="star-rating__input16" id="star-rating-516" type="radio" name="rating16" value="Expert">
         							<label class="star-rating__ico16 rating-item16" for="star-rating-516" tooltip = "Expert"><img src="img/rating5.png" class="rating_picture"></label>
-       								 <input class="star-rating__input16" id="star-rating-416" type="radio" name="rating16" value="4">
+       								 <input class="star-rating__input16" id="star-rating-416" type="radio" name="rating16" value="Advanced">
         							<label class="star-rating__ico16 rating-item16" for="star-rating-416" tooltip = "Advanced"><img src="img/rating4.png" class="rating_picture"></label>
-        							<input class="star-rating__input16" id="star-rating-316" type="radio" name="rating16" value="3">
+        							<input class="star-rating__input16" id="star-rating-316" type="radio" name="rating16" value="Experienced">
         							<label class="star-rating__ico16 rating-item16" for="star-rating-316" tooltip = "Experienced"><img src="img/rating3.png" class="rating_picture"></label>
-        							<input class="star-rating__input16" id="star-rating-216" type="radio" name="rating16" value="2">
+        							<input class="star-rating__input16" id="star-rating-216" type="radio" name="rating16" value="Medium">
         							<label class="star-rating__ico16 rating-item16" for="star-rating-216" tooltip = "Medium"><img src="img/rating2.png" class="rating_picture"></label>
-        							<input class="star-rating__input16" id="star-rating-116" type="radio" name="rating16" value="1">
+        							<input class="star-rating__input16" id="star-rating-116" type="radio" name="rating16" value="Newcomer">
         							<label class="star-rating__ico16 rating-item16" for="star-rating-116" tooltip = "Newcomer" ><img src="img/rating1.png" class="rating_picture"></label>
       							</div>
     						</div>
 					</div>
-					<div>	
+					<div data-num=17 class="num"> 	
 						<p class="skill">XML/XSL/XSLT</p>
 						<div class="star-rating">
       						<div class="star-rating__wrap">
-       								 <input class="star-rating__input17" id="star-rating-517" type="radio" name="rating17" value="5">
+       								 <input class="star-rating__input17" id="star-rating-517" type="radio" name="rating17" value="Expert">
         							<label class="star-rating__ico17 rating-item17" for="star-rating-517" tooltip = "Expert"><img src="img/rating5.png" class="rating_picture"></label>
-       								 <input class="star-rating__input17" id="star-rating-417" type="radio" name="rating17" value="4">
+       								 <input class="star-rating__input17" id="star-rating-417" type="radio" name="rating17" value="Advanced">
         							<label class="star-rating__ico17 rating-item17" for="star-rating-417" tooltip = "Advanced"><img src="img/rating4.png" class="rating_picture"></label>
-        							<input class="star-rating__input17" id="star-rating-317" type="radio" name="rating17" value="3">
+        							<input class="star-rating__input17" id="star-rating-317" type="radio" name="rating17" value="Experienced">
         							<label class="star-rating__ico17 rating-item17" for="star-rating-317" tooltip = "Experienced"><img src="img/rating3.png" class="rating_picture"></label>
-        							<input class="star-rating__input17" id="star-rating-217" type="radio" name="rating17" value="2">
+        							<input class="star-rating__input17" id="star-rating-217" type="radio" name="rating17" value="Medium">
         							<label class="star-rating__ico17 rating-item17" for="star-rating-217" tooltip = "Medium"><img src="img/rating2.png" class="rating_picture"></label>
-        							<input class="star-rating__input17" id="star-rating-117" type="radio" name="rating17" value="1">
+        							<input class="star-rating__input17" id="star-rating-117" type="radio" name="rating17" value="Newcomer">
         							<label class="star-rating__ico17 rating-item17" for="star-rating-117" tooltip = "Newcomer" ><img src="img/rating1.png" class="rating_picture"></label>
       							</div>
     						</div>
 					</div>
 				</div>
 			</div>
-			<div class="block2">	
+			<div class="block2" id="blocker2">	
 				<p class="title_skills">Operating Systems</p>
 				<div class="block_operation">
-					<div>		
+					<div data-num=18 class="num">		
 						<p class="skill">Android</p>
 						<div class="star-rating">
       						<div class="star-rating__wrap">
-       								 <input class="star-rating__input18" id="star-rating-518" type="radio" name="rating18" value="5">
+       								 <input class="star-rating__input18" id="star-rating-518" type="radio" name="rating18" value="Expert">
         							<label class="star-rating__ico18 rating-item18" for="star-rating-518" tooltip = "Expert"><img src="img/rating5.png" class="rating_picture"></label>
-       								 <input class="star-rating__input18" id="star-rating-418" type="radio" name="rating18" value="4">
+       								 <input class="star-rating__input18" id="star-rating-418" type="radio" name="rating18" value="Advanced">
         							<label class="star-rating__ico18 rating-item18" for="star-rating-418" tooltip = "Advanced"><img src="img/rating4.png" class="rating_picture"></label>
-        							<input class="star-rating__input18" id="star-rating-318" type="radio" name="rating18" value="3">
+        							<input class="star-rating__input18" id="star-rating-318" type="radio" name="rating18" value="Experienced">
         							<label class="star-rating__ico18 rating-item18" for="star-rating-318" tooltip = "Experienced"><img src="img/rating3.png" class="rating_picture"></label>
-        							<input class="star-rating__input18" id="star-rating-218" type="radio" name="rating18" value="2">
+        							<input class="star-rating__input18" id="star-rating-218" type="radio" name="rating18" value="Medium">
         							<label class="star-rating__ico18 rating-item18" for="star-rating-218" tooltip = "Medium"><img src="img/rating2.png" class="rating_picture"></label>
-        							<input class="star-rating__input18" id="star-rating-118" type="radio" name="rating18" value="1">
+        							<input class="star-rating__input18" id="star-rating-118" type="radio" name="rating18" value="Newcomer">
         							<label class="star-rating__ico18 rating-item18" for="star-rating-118" tooltip = "Newcomer" ><img src="img/rating1.png" class="rating_picture"></label>
       							</div>
     						</div>
 					</div>
-					<div>	
+					<div data-num=19 class="num">	
 						<p class="skill">BlackBerry</p>
 						<div class="star-rating">
       						<div class="star-rating__wrap">
-       								 <input class="star-rating__input19" id="star-rating-519" type="radio" name="rating19" value="5">
+       								 <input class="star-rating__input19" id="star-rating-519" type="radio" name="rating19" value="Expert">
         							<label class="star-rating__ico19 rating-item19" for="star-rating-519" tooltip = "Expert"><img src="img/rating5.png" class="rating_picture"></label>
-       								 <input class="star-rating__input19" id="star-rating-419" type="radio" name="rating19" value="4">
+       								 <input class="star-rating__input19" id="star-rating-419" type="radio" name="rating19" value="Advanced">
         							<label class="star-rating__ico19 rating-item19" for="star-rating-419" tooltip = "Advanced"><img src="img/rating4.png" class="rating_picture"></label>
-        							<input class="star-rating__input19" id="star-rating-319" type="radio" name="rating19" value="3">
+        							<input class="star-rating__input19" id="star-rating-319" type="radio" name="rating19" value="Experienced">
         							<label class="star-rating__ico19 rating-item19" for="star-rating-319" tooltip = "Experienced"><img src="img/rating3.png" class="rating_picture"></label>
-        							<input class="star-rating__input19" id="star-rating-219" type="radio" name="rating19" value="2">
+        							<input class="star-rating__input19" id="star-rating-219" type="radio" name="rating19" value="Medium">
         							<label class="star-rating__ico19 rating-item19" for="star-rating-219" tooltip = "Medium"><img src="img/rating2.png" class="rating_picture"></label>
-        							<input class="star-rating__input19" id="star-rating-119" type="radio" name="rating19" value="1">
+        							<input class="star-rating__input19" id="star-rating-119" type="radio" name="rating19" value="Newcomer">
         							<label class="star-rating__ico19 rating-item19" for="star-rating-119" tooltip = "Newcomer" ><img src="img/rating1.png" class="rating_picture"></label>
       							</div>
     						</div>
 					</div>
-					<div>	
+					<div data-num=20 class="num">	
 						<p class="skill">iOS</p>
 						<div class="star-rating">
       						<div class="star-rating__wrap">
-       								 <input class="star-rating__input20" id="star-rating-520" type="radio" name="rating20" value="5">
+       								 <input class="star-rating__input20" id="star-rating-520" type="radio" name="rating20" value="Expert">
         							<label class="star-rating__ico20 rating-item20" for="star-rating-520" tooltip = "Expert"><img src="img/rating5.png" class="rating_picture"></label>
-       								 <input class="star-rating__input20" id="star-rating-420" type="radio" name="rating20" value="4">
+       								 <input class="star-rating__input20" id="star-rating-420" type="radio" name="rating20" value="Advanced">
         							<label class="star-rating__ico20 rating-item20" for="star-rating-420" tooltip = "Advanced"><img src="img/rating4.png" class="rating_picture"></label>
-        							<input class="star-rating__input20" id="star-rating-320" type="radio" name="rating20" value="3">
+        							<input class="star-rating__input20" id="star-rating-320" type="radio" name="rating20" value="Experienced">
         							<label class="star-rating__ico20 rating-item20" for="star-rating-320" tooltip = "Experienced"><img src="img/rating3.png" class="rating_picture"></label>
-        							<input class="star-rating__input20" id="star-rating-220" type="radio" name="rating20" value="2">
+        							<input class="star-rating__input20" id="star-rating-220" type="radio" name="rating20" value="Medium">
         							<label class="star-rating__ico20 rating-item20" for="star-rating-220" tooltip = "Medium"><img src="img/rating2.png" class="rating_picture"></label>
-        							<input class="star-rating__input20" id="star-rating-120" type="radio" name="rating20" value="1">
+        							<input class="star-rating__input20" id="star-rating-120" type="radio" name="rating20" value="Newcomer">
         							<label class="star-rating__ico20 rating-item20" for="star-rating-120" tooltip = "Newcomer" ><img src="img/rating1.png" class="rating_picture"></label>
       							</div>
     						</div>
 					</div>
-					<div>	
+					<div data-num=21 class="num">	
 						<p class="skill">Symbian</p>
 						<div class="star-rating">
       						<div class="star-rating__wrap">
-       								 <input class="star-rating__input21" id="star-rating-521" type="radio" name="rating21" value="5">
+       								 <input class="star-rating__input21" id="star-rating-521" type="radio" name="rating21" value="Expert">
         							<label class="star-rating__ico21 rating-item21" for="star-rating-521" tooltip = "Expert"><img src="img/rating5.png" class="rating_picture"></label>
-       								 <input class="star-rating__input21" id="star-rating-421" type="radio" name="rating21" value="4">
+       								 <input class="star-rating__input21" id="star-rating-421" type="radio" name="rating21" value="Advanced">
         							<label class="star-rating__ico21 rating-item21" for="star-rating-421" tooltip = "Advanced"><img src="img/rating4.png" class="rating_picture"></label>
-        							<input class="star-rating__input21" id="star-rating-321" type="radio" name="rating21" value="3">
+        							<input class="star-rating__input21" id="star-rating-321" type="radio" name="rating21" value="Experienced">
         							<label class="star-rating__ico21 rating-item21" for="star-rating-321" tooltip = "Experienced"><img src="img/rating3.png" class="rating_picture"></label>
-        							<input class="star-rating__input21" id="star-rating-221" type="radio" name="rating21" value="2">
+        							<input class="star-rating__input21" id="star-rating-221" type="radio" name="rating21" value="Medium">
         							<label class="star-rating__ico21 rating-item21" for="star-rating-221" tooltip = "Medium"><img src="img/rating2.png" class="rating_picture"></label>
-        							<input class="star-rating__input21" id="star-rating-121" type="radio" name="rating21" value="1">
+        							<input class="star-rating__input21" id="star-rating-121" type="radio" name="rating21" value="Newcomer">
         							<label class="star-rating__ico21 rating-item21" for="star-rating-121" tooltip = "Newcomer" ><img src="img/rating1.png" class="rating_picture"></label>
       							</div>
     						</div>
 					</div>
-					<div>	
+					<div data-num=22 class="num">	
 						<p class="skill">Unix / Linux / Solaris</p>
 						<div class="star-rating">
       						<div class="star-rating__wrap">
-       								 <input class="star-rating__input22" id="star-rating-522" type="radio" name="rating22" value="5">
+       								 <input class="star-rating__input22" id="star-rating-522" type="radio" name="rating22" value="Expert">
         							<label class="star-rating__ico22 rating-item22" for="star-rating-522" tooltip = "Expert"><img src="img/rating5.png" class="rating_picture"></label>
-       								 <input class="star-rating__input22" id="star-rating-422" type="radio" name="rating22" value="4">
+       								 <input class="star-rating__input22" id="star-rating-422" type="radio" name="rating22" value="Advanced">
         							<label class="star-rating__ico22 rating-item22" for="star-rating-422" tooltip = "Advanced"><img src="img/rating4.png" class="rating_picture"></label>
-        							<input class="star-rating__input22" id="star-rating-322" type="radio" name="rating22" value="3">
+        							<input class="star-rating__input22" id="star-rating-322" type="radio" name="rating22" value="Experienced">
         							<label class="star-rating__ico22 rating-item22" for="star-rating-322" tooltip = "Experienced"><img src="img/rating3.png" class="rating_picture"></label>
-        							<input class="star-rating__input22" id="star-rating-222" type="radio" name="rating22" value="2">
+        							<input class="star-rating__input22" id="star-rating-222" type="radio" name="rating22" value="Medium">
         							<label class="star-rating__ico22 rating-item22" for="star-rating-222" tooltip = "Medium"><img src="img/rating2.png" class="rating_picture"></label>
-        							<input class="star-rating__input22" id="star-rating-122" type="radio" name="rating22" value="1">
+        							<input class="star-rating__input22" id="star-rating-122" type="radio" name="rating22" value="Newcomer">
         							<label class="star-rating__ico22 rating-item22" for="star-rating-122" tooltip = "Newcomer" ><img src="img/rating1.png" class="rating_picture"></label>
       							</div>
     						</div>
 					</div>
-					<div>	
+					<div data-num=23 class="num">	
 						<p class="skill">Windows</p>
 						<div class="star-rating">
       						<div class="star-rating__wrap">
-       								 <input class="star-rating__input23" id="star-rating-523" type="radio" name="rating23" value="5">
+       								 <input class="star-rating__input23" id="star-rating-523" type="radio" name="rating23" value="Expert">
         							<label class="star-rating__ico23 rating-item23" for="star-rating-523" tooltip = "Expert"><img src="img/rating5.png" class="rating_picture"></label>
-       								 <input class="star-rating__input23" id="star-rating-423" type="radio" name="rating23" value="4">
+       								 <input class="star-rating__input23" id="star-rating-423" type="radio" name="rating23" value="Advanced">
         							<label class="star-rating__ico23 rating-item23" for="star-rating-423" tooltip = "Advanced"><img src="img/rating4.png" class="rating_picture"></label>
-        							<input class="star-rating__input23" id="star-rating-323" type="radio" name="rating23" value="3">
+        							<input class="star-rating__input23" id="star-rating-323" type="radio" name="rating23" value="Experienced">
         							<label class="star-rating__ico23 rating-item23" for="star-rating-323" tooltip = "Experienced"><img src="img/rating3.png" class="rating_picture"></label>
-        							<input class="star-rating__input23" id="star-rating-223" type="radio" name="rating23" value="2">
+        							<input class="star-rating__input23" id="star-rating-223" type="radio" name="rating23" value="Medium">
         							<label class="star-rating__ico23 rating-item23" for="star-rating-223" tooltip = "Medium"><img src="img/rating2.png" class="rating_picture"></label>
-        							<input class="star-rating__input" id="star-rating-1" type="radio" name="rating23" value="1">
+        							<input class="star-rating__input" id="star-rating-1" type="radio" name="rating23" value="Newcomer">
         							<label class="star-rating__ico23 rating-item23" for="star-rating-123" tooltip = "Newcomer" ><img src="img/rating1.png" class="rating_picture"></label>
       							</div>
     						</div>
 					</div>
-					<div>	
+					<div data-num=24 class="num">	
 						<p class="skill">Windows Phone</p>
 						<div class="star-rating">
       						<div class="star-rating__wrap">
-       								 <input class="star-rating__input24" id="star-rating-524" type="radio" name="rating24" value="5">
+       								 <input class="star-rating__input24" id="star-rating-524" type="radio" name="rating24" value="Expert">
         							<label class="star-rating__ico24 rating-item24" for="star-rating-524" tooltip = "Expert"><img src="img/rating5.png" class="rating_picture"></label>
-       								 <input class="star-rating__input24" id="star-rating-424" type="radio" name="rating24" value="4">
+       								 <input class="star-rating__input24" id="star-rating-424" type="radio" name="rating24" value="Advanced">
         							<label class="star-rating__ico24 rating-item24" for="star-rating-424" tooltip = "Advanced"><img src="img/rating4.png" class="rating_picture"></label>
-        							<input class="star-rating__input24" id="star-rating-324" type="radio" name="rating24" value="3">
+        							<input class="star-rating__input24" id="star-rating-324" type="radio" name="rating24" value="Experienced">
         							<label class="star-rating__ico24 rating-item24" for="star-rating-324" tooltip = "Experienced"><img src="img/rating3.png" class="rating_picture"></label>
-        							<input class="star-rating__input24" id="star-rating-224" type="radio" name="rating24" value="2">
+        							<input class="star-rating__input24" id="star-rating-224" type="radio" name="rating24" value="Medium">
         							<label class="star-rating__ico24 rating-item24" for="star-rating-224" tooltip = "Medium"><img src="img/rating2.png" class="rating_picture"></label>
-        							<input class="star-rating__input24" id="star-rating-124" type="radio" name="rating24" value="1">
+        							<input class="star-rating__input24" id="star-rating-124" type="radio" name="rating24" value="Newcomer">
         							<label class="star-rating__ico24 rating-item24" for="star-rating-124" tooltip = "Newcomer" ><img src="img/rating1.png" class="rating_picture"></label>
       							</div>
     						</div>
 					</div>
 				</div>
 			</div>
-			<div class="block3">	
+			<div class="block3" id="blocker3">	
 				<p class="title_skills">Platforms</p>
 				<div class="block_platforms">
-					<div>		
+					<div data-num=25 class="num">		
 						<p class="skill">AMAZON</p>
 						<div class="star-rating">
       						<div class="star-rating__wrap">
-       								 <input class="star-rating__input25" id="star-rating-525" type="radio" name="rating25" value="5">
+       								 <input class="star-rating__input25" id="star-rating-525" type="radio" name="rating25" value="Expert">
         							<label class="star-rating__ico25 rating-item25" for="star-rating-525" tooltip = "Expert"><img src="img/rating5.png" class="rating_picture"></label>
-       								 <input class="star-rating__input25" id="star-rating-425" type="radio" name="rating25" value="4">
+       								 <input class="star-rating__input25" id="star-rating-425" type="radio" name="rating25" value="Advanced">
         							<label class="star-rating__ico25 rating-item25" for="star-rating-425" tooltip = "Advanced"><img src="img/rating4.png" class="rating_picture"></label>
-        							<input class="star-rating__input25" id="star-rating-325" type="radio" name="rating25" value="3">
+        							<input class="star-rating__input25" id="star-rating-325" type="radio" name="rating25" value="Experienced">
         							<label class="star-rating__ico25 rating-item25" for="star-rating-325" tooltip = "Experienced"><img src="img/rating3.png" class="rating_picture"></label>
-        							<input class="star-rating__input25" id="star-rating-225" type="radio" name="rating25" value="2">
+        							<input class="star-rating__input25" id="star-rating-225" type="radio" name="rating25" value="Medium">
         							<label class="star-rating__ico25 rating-item25" for="star-rating-225" tooltip = "Medium"><img src="img/rating2.png" class="rating_picture"></label>
-        							<input class="star-rating__input25" id="star-rating-125" type="radio" name="rating25" value="1">
+        							<input class="star-rating__input25" id="star-rating-125" type="radio" name="rating25" value="Newcomer">
         							<label class="star-rating__ico25 rating-item25" for="star-rating-125" tooltip = "Newcomer" ><img src="img/rating1.png" class="rating_picture"></label>
       							</div>
     						</div>
 					</div>
-					<div>	
+					<div data-num=26 class="num">	
 						<p class="skill">ATG</p>
 						<div class="star-rating">
       						<div class="star-rating__wrap">
-       								 <input class="star-rating__input26" id="star-rating-526" type="radio" name="rating26" value="5">
+       								 <input class="star-rating__input26" id="star-rating-526" type="radio" name="rating26" value="Expert">
         							<label class="star-rating__ico26 rating-item26" for="star-rating-526" tooltip = "Expert"><img src="img/rating5.png" class="rating_picture"></label>
-       								 <input class="star-rating__input26" id="star-rating-426" type="radio" name="rating26" value="4">
+       								 <input class="star-rating__input26" id="star-rating-426" type="radio" name="rating26" value="Advanced">
         							<label class="star-rating__ico26 rating-item26" for="star-rating-426" tooltip = "Advanced"><img src="img/rating4.png" class="rating_picture"></label>
-        							<input class="star-rating__input26" id="star-rating-326" type="radio" name="rating26" value="3">
+        							<input class="star-rating__input26" id="star-rating-326" type="radio" name="rating26" value="Experienced">
         							<label class="star-rating__ico26 rating-item26" for="star-rating-326" tooltip = "Experienced"><img src="img/rating3.png" class="rating_picture"></label>
-        							<input class="star-rating__input26" id="star-rating-226" type="radio" name="rating26" value="2">
+        							<input class="star-rating__input26" id="star-rating-226" type="radio" name="rating26" value="Medium">
         							<label class="star-rating__ico26 rating-item26" for="star-rating-226" tooltip = "Medium"><img src="img/rating2.png" class="rating_picture"></label>
-        							<input class="star-rating__input26" id="star-rating-126" type="radio" name="rating26" value="1">
+        							<input class="star-rating__input26" id="star-rating-126" type="radio" name="rating26" value="Newcomer">
         							<label class="star-rating__ico26 rating-item26" for="star-rating-126" tooltip = "Newcomer" ><img src="img/rating1.png" class="rating_picture"></label>
       							</div>
     						</div>
 					</div>
-					<div>	
+					<div data-num=27 class="num">	
 						<p class="skill">AZURE</p>
 						<div class="star-rating">
       						<div class="star-rating__wrap">
-       								 <input class="star-rating__input27" id="star-rating-527" type="radio" name="rating27" value="5">
+       								 <input class="star-rating__input27" id="star-rating-527" type="radio" name="rating27" value="Expert">
         							<label class="star-rating__ico27 rating-item27" for="star-rating-527" tooltip = "Expert"><img src="img/rating5.png" class="rating_picture"></label>
-       								 <input class="star-rating__input27" id="star-rating-427" type="radio" name="rating27" value="4">
+       								 <input class="star-rating__input27" id="star-rating-427" type="radio" name="rating27" value="Advanced">
         							<label class="star-rating__ico27 rating-item27" for="star-rating-427" tooltip = "Advanced"><img src="img/rating4.png" class="rating_picture"></label>
-        							<input class="star-rating__input27" id="star-rating-327" type="radio" name="rating27" value="3">
+        							<input class="star-rating__input27" id="star-rating-327" type="radio" name="rating27" value="Experienced">
         							<label class="star-rating__ico27 rating-item27" for="star-rating-327" tooltip = "Experienced"><img src="img/rating3.png" class="rating_picture"></label>
-        							<input class="star-rating__input27" id="star-rating-227" type="radio" name="rating27" value="2">
+        							<input class="star-rating__input27" id="star-rating-227" type="radio" name="rating27" value="Medium">
         							<label class="star-rating__ico27 rating-item27" for="star-rating-227" tooltip = "Medium"><img src="img/rating2.png" class="rating_picture"></label>
-        							<input class="star-rating__input27" id="star-rating-127" type="radio" name="rating27" value="1">
+        							<input class="star-rating__input27" id="star-rating-127" type="radio" name="rating27" value="Newcomer">
         							<label class="star-rating__ico27 rating-item27" for="star-rating-127" tooltip = "Newcomer" ><img src="img/rating1.png" class="rating_picture"></label>
       							</div>
     						</div>
 					</div>
-					<div>	
+					<div data-num=28 class="num">	
 						<p class="skill">COGNOS</p>
 						<div class="star-rating">
       						<div class="star-rating__wrap">
-       								 <input class="star-rating__input28" id="star-rating-528" type="radio" name="rating28" value="5">
+       								 <input class="star-rating__input28" id="star-rating-528" type="radio" name="rating28" value="Expert">
         							<label class="star-rating__ico28 rating-item28" for="star-rating-528" tooltip = "Expert"><img src="img/rating5.png" class="rating_picture"></label>
-       								 <input class="star-rating__input28" id="star-rating-428" type="radio" name="rating28" value="4">
+       								 <input class="star-rating__input28" id="star-rating-428" type="radio" name="rating28" value="Advanced">
         							<label class="star-rating__ico28 rating-item28" for="star-rating-428" tooltip = "Advanced"><img src="img/rating4.png" class="rating_picture"></label>
-        							<input class="star-rating__input28" id="star-rating-328" type="radio" name="rating28" value="3">
+        							<input class="star-rating__input28" id="star-rating-328" type="radio" name="rating28" value="Experienced">
         							<label class="star-rating__ico28 rating-item28" for="star-rating-328" tooltip = "Experienced"><img src="img/rating3.png" class="rating_picture"></label>
-        							<input class="star-rating__input28" id="star-rating-228" type="radio" name="rating28" value="2">
+        							<input class="star-rating__input28" id="star-rating-228" type="radio" name="rating28" value="Medium">
         							<label class="star-rating__ico28 rating-item28" for="star-rating-228" tooltip = "Medium"><img src="img/rating2.png" class="rating_picture"></label>
-        							<input class="star-rating__input28" id="star-rating-128" type="radio" name="rating28" value="1">
+        							<input class="star-rating__input28" id="star-rating-128" type="radio" name="rating28" value="Newcomer">
         							<label class="star-rating__ico28 rating-item28" for="star-rating-128" tooltip = "Newcomer" ><img src="img/rating1.png" class="rating_picture"></label>
       							</div>
     						</div>
 					</div>
 				
-					<div>	
+					<div data-num=29 class="num">	
 						<p class="skill">DOCUMENTUM</p>
 						<div class="star-rating">
       						<div class="star-rating__wrap">
-       								 <input class="star-rating__input29" id="star-rating-529" type="radio" name="rating29" value="5">
+       								 <input class="star-rating__input29" id="star-rating-529" type="radio" name="rating29" value="Expert">
         							<label class="star-rating__ico29 rating-item29" for="star-rating-529" tooltip = "Expert"><img src="img/rating5.png" class="rating_picture"></label>
-       								 <input class="star-rating__input29" id="star-rating-429" type="radio" name="rating29" value="4">
+       								 <input class="star-rating__input29" id="star-rating-429" type="radio" name="rating29" value="Advanced">
         							<label class="star-rating__ico29 rating-item29" for="star-rating-429" tooltip = "Advanced"><img src="img/rating4.png" class="rating_picture"></label>
-        							<input class="star-rating__input29" id="star-rating-329" type="radio" name="rating29" value="3">
+        							<input class="star-rating__input29" id="star-rating-329" type="radio" name="rating29" value="Experienced">
         							<label class="star-rating__ico29 rating-item29" for="star-rating-329" tooltip = "Experienced"><img src="img/rating3.png" class="rating_picture"></label>
-        							<input class="star-rating__input29" id="star-rating-229" type="radio" name="rating29" value="2">
+        							<input class="star-rating__input29" id="star-rating-229" type="radio" name="rating29" value="Medium">
         							<label class="star-rating__ico29 rating-item29" for="star-rating-229" tooltip = "Medium"><img src="img/rating2.png" class="rating_picture"></label>
-        							<input class="star-rating__input29" id="star-rating-129" type="radio" name="rating29" value="1">
+        							<input class="star-rating__input29" id="star-rating-129" type="radio" name="rating29" value="Newcomer">
         							<label class="star-rating__ico29 rating-item29" for="star-rating-129" tooltip = "Newcomer" ><img src="img/rating1.png" class="rating_picture"></label>
       							</div>
     						</div>
 					</div>
-					<div>	
+					<div data-num=30 class="num">	
 						<p class="skill">SAP</p>
 						<div class="star-rating">
       						<div class="star-rating__wrap">
-       								 <input class="star-rating__input30" id="star-rating-530" type="radio" name="rating30" value="5">
+       								 <input class="star-rating__input30" id="star-rating-530" type="radio" name="rating30" value="Expert">
         							<label class="star-rating__ico30 rating-item30" for="star-rating-530" tooltip = "Expert"><img src="img/rating5.png" class="rating_picture"></label>
-       								 <input class="star-rating__input30" id="star-rating-430" type="radio" name="rating30" value="4">
+       								 <input class="star-rating__input30" id="star-rating-430" type="radio" name="rating30" value="Advanced">
         							<label class="star-rating__ico30 rating-item30" for="star-rating-430" tooltip = "Advanced"><img src="img/rating4.png" class="rating_picture"></label>
-        							<input class="star-rating__input30" id="star-rating-330" type="radio" name="rating30" value="3">
+        							<input class="star-rating__input30" id="star-rating-330" type="radio" name="rating30" value="Experienced">
         							<label class="star-rating__ico30 rating-item30" for="star-rating-330" tooltip = "Experienced"><img src="img/rating3.png" class="rating_picture"></label>
-        							<input class="star-rating__input30" id="star-rating-230" type="radio" name="rating30" value="2">
+        							<input class="star-rating__input30" id="star-rating-230" type="radio" name="rating30" value="Medium">
         							<label class="star-rating__ico30 rating-item30" for="star-rating-230" tooltip = "Medium"><img src="img/rating2.png" class="rating_picture"></label>
-        							<input class="star-rating__input30" id="star-rating-130" type="radio" name="rating30" value="1">
+        							<input class="star-rating__input30" id="star-rating-130" type="radio" name="rating30" value="Newcomer">
         							<label class="star-rating__ico30 rating-item30" for="star-rating-130" tooltip = "Newcomer" ><img src="img/rating1.png" class="rating_picture"></label>
       							</div>
     						</div>
 					</div>
-					<div>	
+					<div data-num=31 class="num">	
 						<p class="skill">SF.com/FORCE</p>
 						<div class="star-rating">
       						<div class="star-rating__wrap">
-       								 <input class="star-rating__input31" id="star-rating-531" type="radio" name="rating31" value="5">
+       								 <input class="star-rating__input31" id="star-rating-531" type="radio" name="rating31" value="Expert">
         							<label class="star-rating__ico31 rating-item31" for="star-rating-531" tooltip = "Expert"><img src="img/rating5.png" class="rating_picture"></label>
-       								 <input class="star-rating__input31" id="star-rating-431" type="radio" name="rating31" value="4">
+       								 <input class="star-rating__input31" id="star-rating-431" type="radio" name="rating31" value="Advanced">
         							<label class="star-rating__ico31 rating-item31" for="star-rating-431" tooltip = "Advanced"><img src="img/rating4.png" class="rating_picture"></label>
-        							<input class="star-rating__input31" id="star-rating-331" type="radio" name="rating31" value="3">
+        							<input class="star-rating__input31" id="star-rating-331" type="radio" name="rating31" value="Experienced">
         							<label class="star-rating__ico31 rating-item31" for="star-rating-331" tooltip = "Experienced"><img src="img/rating3.png" class="rating_picture"></label>
-        							<input class="star-rating__input31" id="star-rating-231" type="radio" name="rating31" value="2">
+        							<input class="star-rating__input31" id="star-rating-231" type="radio" name="rating31" value="Medium">
         							<label class="star-rating__ico31 rating-item31" for="star-rating-231" tooltip = "Medium"><img src="img/rating2.png" class="rating_picture"></label>
-        							<input class="star-rating__input31" id="star-rating-131" type="radio" name="rating31" value="1">
+        							<input class="star-rating__input31" id="star-rating-131" type="radio" name="rating31" value="Newcomer">
         							<label class="star-rating__ico31 rating-item31" for="star-rating-131" tooltip = "Newcomer" ><img src="img/rating1.png" class="rating_picture"></label>
       							</div>
     						</div>
 					</div>
-					<div>	
+					<div data-num=32 class="num">	
 						<p class="skill">SHAREPOINT</p>
 						<div class="star-rating">
       						<div class="star-rating__wrap">
-       								 <input class="star-rating__input32" id="star-rating-532" type="radio" name="rating32" value="5">
+       								 <input class="star-rating__input32" id="star-rating-532" type="radio" name="rating32" value="Expert">
         							<label class="star-rating__ico32 rating-item32" for="star-rating-532" tooltip = "Expert"><img src="img/rating5.png" class="rating_picture"></label>
-       								 <input class="star-rating__input32" id="star-rating-432" type="radio" name="rating32" value="4">
+       								 <input class="star-rating__input32" id="star-rating-432" type="radio" name="rating32" value="Advanced">
         							<label class="star-rating__ico32 rating-item32" for="star-rating-4" tooltip = "Advanced"><img src="img/rating4.png" class="rating_picture"></label>
-        							<input class="star-rating__input32" id="star-rating-332" type="radio" name="rating32" value="3">
+        							<input class="star-rating__input32" id="star-rating-332" type="radio" name="rating32" value="Experienced">
         							<label class="star-rating__ico32 rating-item32" for="star-rating-332" tooltip = "Experienced"><img src="img/rating3.png" class="rating_picture"></label>
-        							<input class="star-rating__input32" id="star-rating-232" type="radio" name="rating32" value="2">
+        							<input class="star-rating__input32" id="star-rating-232" type="radio" name="rating32" value="Medium">
         							<label class="star-rating__ico32 rating-item32" for="star-rating-232" tooltip = "Medium"><img src="img/rating2.png" class="rating_picture"></label>
-        							<input class="star-rating__input32" id="star-rating-132" type="radio" name="rating32" value="1">
+        							<input class="star-rating__input32" id="star-rating-132" type="radio" name="rating32" value="Newcomer">
         							<label class="star-rating__ico32 rating-item32" for="star-rating-132" tooltip = "Newcomer" ><img src="img/rating1.png" class="rating_picture"></label>
       							</div>
     						</div>
 					</div>
-					<div>	
+					<div data-num=33 class="num">	
 						<p class="skill">Tibco</p>
 						<div class="star-rating">
       						<div class="star-rating__wrap">
-       								 <input class="star-rating__input33" id="star-rating-533" type="radio" name="rating33" value="5">
+       								 <input class="star-rating__input33" id="star-rating-533" type="radio" name="rating33" value="Expert">
         							<label class="star-rating__ico33 rating-item33" for="star-rating-533" tooltip = "Expert"><img src="img/rating5.png" class="rating_picture"></label>
-       								 <input class="star-rating__input33" id="star-rating-433" type="radio" name="rating33" value="4">
+       								 <input class="star-rating__input33" id="star-rating-433" type="radio" name="rating33" value="Advanced">
         							<label class="star-rating__ico33 rating-item33" for="star-rating-433" tooltip = "Advanced"><img src="img/rating4.png" class="rating_picture"></label>
-        							<input class="star-rating__input33" id="star-rating-333" type="radio" name="rating33" value="3">
+        							<input class="star-rating__input33" id="star-rating-333" type="radio" name="rating33" value="Experienced">
         							<label class="star-rating__ico33 rating-item33" for="star-rating-333" tooltip = "Experienced"><img src="img/rating3.png" class="rating_picture"></label>
-        							<input class="star-rating__input33" id="star-rating-233" type="radio" name="rating33" value="2">
+        							<input class="star-rating__input33" id="star-rating-233" type="radio" name="rating33" value="Medium">
         							<label class="star-rating__ico33 rating-item33" for="star-rating-233" tooltip = "Medium"><img src="img/rating2.png" class="rating_picture"></label>
-        							<input class="star-rating__input33" id="star-rating-133" type="radio" name="rating33" value="1">
+        							<input class="star-rating__input33" id="star-rating-133" type="radio" name="rating33" value="Newcomer">
         							<label class="star-rating__ico33 rating-item33" for="star-rating-133" tooltip = "Newcomer" ><img src="img/rating1.png" class="rating_picture"></label>
       							</div>
     						</div>
 					</div>
-					<div>	
+					<div data-num=34 class="num">	
 						<p class="skill">WS Commerce</p>
 						<div class="star-rating">
       						<div class="star-rating__wrap">
-       								 <input class="star-rating__input34" id="star-rating-534" type="radio" name="rating34" value="5">
+       								 <input class="star-rating__input34" id="star-rating-534" type="radio" name="rating34" value="Expert">
         							<label class="star-rating__ico34 rating-item34" for="star-rating-534" tooltip = "Expert"><img src="img/rating5.png" class="rating_picture"></label>
-       								 <input class="star-rating__input34" id="star-rating-434" type="radio" name="rating34" value="4">
+       								 <input class="star-rating__input34" id="star-rating-434" type="radio" name="rating34" value="Advanced">
         							<label class="star-rating__ico34 rating-item34" for="star-rating-434" tooltip = "Advanced"><img src="img/rating4.png" class="rating_picture"></label>
-        							<input class="star-rating__input34" id="star-rating-334" type="radio" name="rating34" value="3">
+        							<input class="star-rating__input34" id="star-rating-334" type="radio" name="rating34" value="Experienced">
         							<label class="star-rating__ico34 rating-item34" for="star-rating-334" tooltip = "Experienced"><img src="img/rating3.png" class="rating_picture"></label>
-        							<input class="star-rating__input34" id="star-rating-234" type="radio" name="rating34" value="2">
+        							<input class="star-rating__input34" id="star-rating-234" type="radio" name="rating34" value="Medium">
         							<label class="star-rating__ico34 rating-item34" for="star-rating-234" tooltip = "Medium"><img src="img/rating2.png" class="rating_picture"></label>
-        							<input class="star-rating__input34" id="star-rating-134" type="radio" name="rating34" value="1">
+        							<input class="star-rating__input34" id="star-rating-134" type="radio" name="rating34" value="Newcomer">
         							<label class="star-rating__ico34 rating-item34" for="star-rating-134" tooltip = "Newcomer" ><img src="img/rating1.png" class="rating_picture"></label>
       							</div>
     						</div>
 					</div>
+                </div>
 				</div>
-			</div>
-			<div class="block4">	
+			<div class="block4" id="blocker4">	
 				<p class="title_skills">Databases</p>
 				<div class="block_databases">	
-					<div>	
+					<div data-num=35 class="num">	
 						<p class="skill">Microsoft SQL Server</p>
 						<div class="star-rating">
       						<div class="star-rating__wrap">
-       								 <input class="star-rating__input35" id="star-rating-535" type="radio" name="rating35" value="5">
+       								 <input class="star-rating__input35" id="star-rating-535" type="radio" name="rating35" value="Expert">
         							<label class="star-rating__ico35 rating-item35" for="star-rating-535" tooltip = "Expert"><img src="img/rating5.png" class="rating_picture"></label>
-       								 <input class="star-rating__input35" id="star-rating-435" type="radio" name="rating35" value="4">
+       								 <input class="star-rating__input35" id="star-rating-435" type="radio" name="rating35" value="Advanced">
         							<label class="star-rating__ico35 rating-item35" for="star-rating-435" tooltip = "Advanced"><img src="img/rating4.png" class="rating_picture"></label>
-        							<input class="star-rating__input35" id="star-rating-335" type="radio" name="rating35" value="3">
+        							<input class="star-rating__input35" id="star-rating-335" type="radio" name="rating35" value="Experienced">
         							<label class="star-rating__ico35 rating-item35" for="star-rating-335" tooltip = "Experienced"><img src="img/rating3.png" class="rating_picture"></label>
-        							<input class="star-rating__input35" id="star-rating-235" type="radio" name="rating35" value="2">
+        							<input class="star-rating__input35" id="star-rating-235" type="radio" name="rating35" value="Medium">
         							<label class="star-rating__ico35 rating-item35" for="star-rating-235" tooltip = "Medium"><img src="img/rating2.png" class="rating_picture"></label>
-        							<input class="star-rating__input35" id="star-rating-135" type="radio" name="rating35" value="1">
+        							<input class="star-rating__input35" id="star-rating-135" type="radio" name="rating35" value="Newcomer">
         							<label class="star-rating__ico35 rating-item35" for="star-rating-135" tooltip = "Newcomer" ><img src="img/rating1.png" class="rating_picture"></label>
       							</div>
     						</div>
 					</div>
-					<div>	
+					<div data-num=36 class="num">	
 						<p class="skill">Oracle</p>
 						<div class="star-rating">
       						<div class="star-rating__wrap">
-       								 <input class="star-rating__input36" id="star-rating-536" type="radio" name="rating36" value="5">
+       								 <input class="star-rating__input36" id="star-rating-536" type="radio" name="rating36" value="Expert">
         							<label class="star-rating__ico36 rating-item36" for="star-rating-536" tooltip = "Expert"><img src="img/rating5.png" class="rating_picture"></label>
-       								 <input class="star-rating__input36" id="star-rating-436" type="radio" name="rating36" value="4">
+       								 <input class="star-rating__input36" id="star-rating-436" type="radio" name="rating36" value="Advanced">
         							<label class="star-rating__ico36 rating-item36" for="star-rating-436" tooltip = "Advanced"><img src="img/rating4.png" class="rating_picture"></label>
-        							<input class="star-rating__input36" id="star-rating-336" type="radio" name="rating36" value="3">
+        							<input class="star-rating__input36" id="star-rating-336" type="radio" name="rating36" value="Experienced">
         							<label class="star-rating__ico36 rating-item36" for="star-rating-336" tooltip = "Experienced"><img src="img/rating3.png" class="rating_picture"></label>
-        							<input class="star-rating__input36" id="star-rating-236" type="radio" name="rating36" value="2">
+        							<input class="star-rating__input36" id="star-rating-236" type="radio" name="rating36" value="Medium">
         							<label class="star-rating__ico36 rating-item36" for="star-rating-236" tooltip = "Medium"><img src="img/rating2.png" class="rating_picture"></label>
-        							<input class="star-rating__input36" id="star-rating-136" type="radio" name="rating36" value="1">
+        							<input class="star-rating__input36" id="star-rating-136" type="radio" name="rating36" value="Newcomer">
         							<label class="star-rating__ico36 rating-item36" for="star-rating-136" tooltip = "Newcomer" ><img src="img/rating1.png" class="rating_picture"></label>
       							</div>
     						</div>
 					</div>
-					<div>	
+					<div data-num=37 class="num">	
 						<p class="skill">PostgreSQL</p>
 						<div class="star-rating">
       						<div class="star-rating__wrap">
-       								 <input class="star-rating__input37" id="star-rating-537" type="radio" name="rating37" value="5">
+       								 <input class="star-rating__input37" id="star-rating-537" type="radio" name="rating37" value="Expert">
         							<label class="star-rating__ico37 rating-item37" for="star-rating-537" tooltip = "Expert"><img src="img/rating5.png" class="rating_picture"></label>
-       								 <input class="star-rating__input37" id="star-rating-437" type="radio" name="rating37" value="4">
+       								 <input class="star-rating__input37" id="star-rating-437" type="radio" name="rating37" value="Advanced">
         							<label class="star-rating__ico37 rating-item37" for="star-rating-437" tooltip = "Advanced"><img src="img/rating4.png" class="rating_picture"></label>
-        							<input class="star-rating__input37" id="star-rating-337" type="radio" name="rating37" value="3">
+        							<input class="star-rating__input37" id="star-rating-337" type="radio" name="rating37" value="Experienced">
         							<label class="star-rating__ico37 rating-item37" for="star-rating-337" tooltip = "Experienced"><img src="img/rating3.png" class="rating_picture"></label>
-        							<input class="star-rating__input37" id="star-rating-237" type="radio" name="rating37" value="2">
+        							<input class="star-rating__input37" id="star-rating-237" type="radio" name="rating37" value="Medium">
         							<label class="star-rating__ico37 rating-item37" for="star-rating-237" tooltip = "Medium"><img src="img/rating2.png" class="rating_picture"></label>
-        							<input class="star-rating__input37" id="star-rating-137" type="radio" name="rating37" value="1">
+        							<input class="star-rating__input37" id="star-rating-137" type="radio" name="rating37" value="Newcomer">
         							<label class="star-rating__ico37 rating-item37" for="star-rating-137" tooltip = "Newcomer" ><img src="img/rating1.png" class="rating_picture"></label>
       							</div>
     						</div>
 					</div>
-					<div>	
+					<div data-num=38 class="num">	
 						<p class="skill">MySQL</p>
 						<div class="star-rating">
       						<div class="star-rating__wrap">
-       								 <input class="star-rating__input38" id="star-rating-538" type="radio" name="rating38" value="5">
+       								 <input class="star-rating__input38" id="star-rating-538" type="radio" name="rating38" value="Expert">
         							<label class="star-rating__ico38 rating-item38" for="star-rating-538" tooltip = "Expert"><img src="img/rating5.png" class="rating_picture"></label>
-       								 <input class="star-rating__input38" id="star-rating-438" type="radio" name="rating38" value="4">
+       								 <input class="star-rating__input38" id="star-rating-438" type="radio" name="rating38" value="Advanced">
         							<label class="star-rating__ico38 rating-item38" for="star-rating-438" tooltip = "Advanced"><img src="img/rating4.png" class="rating_picture"></label>
-        							<input class="star-rating__input38" id="star-rating-338" type="radio" name="rating38" value="3">
+        							<input class="star-rating__input38" id="star-rating-338" type="radio" name="rating38" value="Experienced">
         							<label class="star-rating__ico38 rating-item38" for="star-rating-338" tooltip = "Experienced"><img src="img/rating3.png" class="rating_picture"></label>
-        							<input class="star-rating__input38" id="star-rating-238" type="radio" name="rating38" value="2">
+        							<input class="star-rating__input38" id="star-rating-238" type="radio" name="rating38" value="Medium">
         							<label class="star-rating__ico38 rating-item38" for="star-rating-238" tooltip = "Medium"><img src="img/rating2.png" class="rating_picture"></label>
-        							<input class="star-rating__input38" id="star-rating-138" type="radio" name="rating38" value="1">
+        							<input class="star-rating__input38" id="star-rating-138" type="radio" name="rating38" value="Newcomer">
         							<label class="star-rating__ico38 rating-item38" for="star-rating-138" tooltip = "Newcomer" ><img src="img/rating1.png" class="rating_picture"></label>
       							</div>
     						</div>
 					</div>
-					<div>	
+					<div data-num=39 class="num">	
 						<p class="skill">NoSQL</p>
 						<div class="star-rating">
       						<div class="star-rating__wrap">
-       								 <input class="star-rating__input39" id="star-rating-539" type="radio" name="rating39" value="5">
+       								 <input class="star-rating__input39" id="star-rating-539" type="radio" name="rating39" value="Expert">
         							<label class="star-rating__ico39 rating-item39" for="star-rating-539" tooltip = "Expert"><img src="img/rating5.png" class="rating_picture"></label>
-       								 <input class="star-rating__input39" id="star-rating-439" type="radio" name="rating39" value="4">
+       								 <input class="star-rating__input39" id="star-rating-439" type="radio" name="rating39" value="Advanced">
         							<label class="star-rating__ico39 rating-item39" for="star-rating-439" tooltip = "Advanced"><img src="img/rating4.png" class="rating_picture"></label>
-        							<input class="star-rating__input39" id="star-rating-339" type="radio" name="rating39" value="3">
+        							<input class="star-rating__input39" id="star-rating-339" type="radio" name="rating39" value="Experienced">
         							<label class="star-rating__ico39 rating-item39" for="star-rating-339" tooltip = "Experienced"><img src="img/rating3.png" class="rating_picture"></label>
-        							<input class="star-rating__input39" id="star-rating-239" type="radio" name="rating39" value="2">
+        							<input class="star-rating__input39" id="star-rating-239" type="radio" name="rating39" value="Medium">
         							<label class="star-rating__ico39 rating-item39" for="star-rating-239" tooltip = "Medium"><img src="img/rating2.png" class="rating_picture"></label>
-        							<input class="star-rating__input39" id="star-rating-139" type="radio" name="rating39" value="1">
+        							<input class="star-rating__input39" id="star-rating-139" type="radio" name="rating39" value="Newcomer">
         							<label class="star-rating__ico39 rating-item39" for="star-rating-139" tooltip = "Newcomer" ><img src="img/rating1.png" class="rating_picture"></label>
       							</div>
     						</div>
 					</div>
-					<div>	
+					<div data-num=40 class="num">	
 						<p class="skill">ETL / OLAP / BI</p>
 						<div class="star-rating">
       						<div class="star-rating__wrap">
-       								 <input class="star-rating__input40" id="star-rating-540" type="radio" name="rating40" value="5">
+       								 <input class="star-rating__input40" id="star-rating-540" type="radio" name="rating40" value="Expert">
         							<label class="star-rating__ico40 rating-item40" for="star-rating-540" tooltip = "Expert"><img src="img/rating5.png" class="rating_picture"></label>
-       								 <input class="star-rating__input40" id="star-rating-440" type="radio" name="rating40" value="4">
+       								 <input class="star-rating__input40" id="star-rating-440" type="radio" name="rating40" value="Advanced">
         							<label class="star-rating__ico40 rating-item40" for="star-rating-440" tooltip = "Advanced"><img src="img/rating4.png" class="rating_picture"></label>
-        							<input class="star-rating__input40" id="star-rating-340" type="radio" name="rating40" value="3">
+        							<input class="star-rating__input40" id="star-rating-340" type="radio" name="rating40" value="Experienced">
         							<label class="star-rating__ico40 rating-item40" for="star-rating-340" tooltip = "Experienced"><img src="img/rating3.png" class="rating_picture"></label>
-        							<input class="star-rating__input40" id="star-rating-240" type="radio" name="rating40" value="2">
+        							<input class="star-rating__input40" id="star-rating-240" type="radio" name="rating40" value="Medium">
         							<label class="star-rating__ico40 rating-item40" for="star-rating-240" tooltip = "Medium"><img src="img/rating2.png" class="rating_picture"></label>
-        							<input class="star-rating__input40" id="star-rating-140" type="radio" name="rating40" value="1">
+        							<input class="star-rating__input40" id="star-rating-140" type="radio" name="rating40" value="Newcomer">
         							<label class="star-rating__ico40 rating-item40" for="star-rating-140" tooltip = "Newcomer" ><img src="img/rating1.png" class="rating_picture"></label>
       							</div>
     						</div>
-				</div>
+                        </div>
+				
 			</div>
 			</div>
-		</div>
-	</section>
-
+            <div class="button_input">
+                <button id="save_input">Save skills</button>
+            </div>
+        </div>
 	
-</body>
+	</section>
+    </body>
+<script type="text/javascript">
+    var acc_profile = document.getElementsByClassName("accordion_menu");
+var i;
+
+for (i = 0; i < acc_profile.length; i++) {
+  acc_profile[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel_profile = this.nextElementSibling;
+    panel_profile.style.position = "fixed";
+    panel_profile.style.top = 80 + 'px';
+    panel_profile.style.width = "185px";
+    if (panel_profile.style.maxHeight){
+      panel_profile.style.maxHeight = null;
+    } else {
+      panel_profile.style.maxHeight = 200 + "px";
+    } 
+   
+  });
+}
+
+    
+
+</script>
+<script type="text/javascript" src="js/target_data.js"></script>
+<script type="text/javascript" src="js/skills_data.js"></script>
 </html>

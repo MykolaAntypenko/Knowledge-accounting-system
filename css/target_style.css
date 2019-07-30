@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+* {
+  margin:0;
+  padiing:0;
+  font-size: 16px;
+  font-family: 'Lato', sans-serif;
+}
+
+/*header start*/
+header {
+  display: flex;
+  flex-direction:row;
+  align-items: center;
+  padding: 15px 30px;
+  height: 5rem;
+  background-color: #464547;
+  border-bottom: 7px solid #1E90FF;
+}
+
+
+
+.logo {
+  width: 4rem;
+  display: block; 
+}
+
+
+
+.menu__list {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.menu__item {
+  padding: 0 20px;
+  width: 200px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+
+nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between
+}
+
+nav ul {
+  list-style: none;
+  text-align: center;
+}
+nav ul li {
+  display: inline-block;
+}
+nav ul li .btn {
+  display: block;
+  color: #FFFFFF;
+  margin: auto;
+  cursor: pointer;
+  font-size:1.5rem;
+  font-weight: bold;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 100%; 
+  font-family: 'Lato', sans-serif;
+  height: 2rem;
+  padding: 10px;
+}
+nav ul li .btn,
+nav ul li .btn:after,
+nav ul li .btn:before {
+  transition: all .5s;
+}
+
+
+nav.stroke ul li .btn {
+  position: relative;
+}
+nav.stroke ul li .btn:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: '.';
+  color: transparent;
+  background: #aaa;
+  height: 1px;
+}
+nav.stroke ul li .btn:hover:after {
+  width: 100%;
+}
+nav.stroke ul li .btn:hover {
+  width: 100%;
+  background-color: #131313;
+}
+
+.accordion {
+  color: #FFFFFF;
+  cursor: pointer;
+  width: 100%;
+  border-bottom: none;
+  text-align: center;
+  outline: none;
+  transition: 0.4s;
+}
+
+
+.accordion:after {
+  content: '\002B';
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.panel_menu {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: #464547; 
+}
+
+.panel_menu a {
+  text-align: center;
+  text-decoration: none;
+  color: #FFFFFF;
+  font-size: 20px; 
+}
+
+.panel_menu a:hover {
+  color: #1E90FF;
+}
+
+.my_knowledge,
+.my_traininggoal {
+    text-transform: uppercase;
+    font-weight: bold;
+
+}
+
+
+
+
+
+.about_project {
+  color: #FFFFFF;
+  width: auto;
+  margin: 0 1.5rem;
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.fa {
+  color: #FFFFFF;
+}
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.about .about_project {
+  height: 2rem;
+  width: 80%;
+  color: #FFFFFF;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+
+ .outline-inward {
+  display: inline-block;
+  position: relative;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.outline-inward:before {
+  content: '';
+  position: absolute;
+  border: #0D1C1C solid 4px;
+  top: -16px;
+  right: -16px;
+  bottom: -16px;
+  left: -16px;
+  opacity: 0;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: top, right, bottom, left;
+  transition-property: top, right, bottom, left;
+}
+
+.outline-inward:hover {
+  background-color: #0D1C1C;
+}
+.outline-inward:hover:before, 
+.outline-inward:focus:before, 
+.outline-inward:active:before {
+  top: -8px;
+  right: -8px;
+  bottom: -8px;
+  left: -8px;
+  opacity: 1;
+}
+/*header end*/
+
+/*content start*/
+
+.header{
+  width: auto;
+  display: flex;
+  margin: 0 auto;
+  border: 2px solid #1E90FF;
+  border-top: none; 
+  border-bottom: none;
+  justify-content: center;
+}
+
+.out_data {
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #1E90FF;
+  padding: 40px 0;
+}
+
+.out_data th {
+  font-size: 24px;
+  background-color: #1E90FF;
+  line-height: 50px;
+  color: #FFFFFF;
+  border: 2px solid #000000;
+}
+
+.out_data table,
+.out_data tr,
+.out_data td {
+    border: 2px solid #000000;
+    border-collapse: collapse;
+    line-height: 40px;
+}
+
+.out_data tbody {
+  background-color: #dbe5e8;
+}
+
+.result_target {
+  width: 60%;
+  text-align: center;
+
+}
+
+#list_level {
+  display: flex;
+  flex-direction: column;
+}
+
+#list_skill {
+  display: flex;
+  flex-direction: column;
+}
+
+.target_skill {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+/*content end*/

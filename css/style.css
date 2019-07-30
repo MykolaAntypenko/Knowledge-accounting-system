@@ -150,10 +150,11 @@ nav.stroke ul li .btn:hover {
 }
 
 .my_knowledge,
-.my_traininggoal {
+.my_traininggoal,
+.my_profile {
     text-transform: uppercase;
     font-weight: bold;
-
+    padding: 10px;
 }
 
 
@@ -248,7 +249,7 @@ body {
 }
 
 .target {
-  width: 30%;
+  width: 35%;
   height: 80px;
   margin: 0 auto;
   display: block;
@@ -379,21 +380,7 @@ h2 {
   background-color: #0E5EA9;
 }
 
-.result {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
 
-#result1 {
-  display: flex;
-  flex-direction: column;
-}
-
-#result2 {
-  display: flex;
-  flex-direction: column;
-}
 
 
 
@@ -402,9 +389,9 @@ h2 {
   position: fixed;
   width:100%;
   height:100%;
-  z-index:1; /* поверх всех  кроме окна*/
+  z-index:1; 
   background:#000;
-  opacity: 0.5; /*прозрачность*/
+  opacity: 0.5; 
   left:0;
   top:0;
 }
@@ -457,10 +444,7 @@ h2 {
   padding: 30px 0;
 }
 
-.describe {
-  font-size: 20px;
-  text-align: justify;
-}
+
 
 .level_paragraph {
   font-size: 24px;
@@ -475,18 +459,66 @@ h2 {
 .level3,
 .level4,
 .level5 {
-  display: flex;
-  flex-direction: row;
   width: 45%;
-  align-items: center;
+  display: grid;
+  grid-template-columns: [col1start] 12% [col1end] 30px 
+                           [col2start] 85% [col2end];
+  grid-template-rows: [row1start] auto [row1end];
   padding: 20px;
 }
 
 
 .levels {
-  width: 70px;
+  width: 100%;
   height: 60px;
   padding: 0 30px 0 0;
+  grid-column: col1start/col1end;
+  grid-row: row1start;
+}
+
+.describe {
+  font-size: 20px;
+  text-align: justify;
+   grid-column: col2start/col2end;
+  grid-row: row1start;
+}
+
+.pagination {
+  width: auto;
+  display: flex;
+  border: 2px solid #1E90FF;
+  border-bottom: none;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 0;
+}
+
+.pagination button {
+  cursor: pointer;
+  width: 200px;
+  height: 40px;
+  border: none;
+  background-color: #FFFFFF;
+  border: 2px solid #1E90FF;;
+  transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+  border-radius: 4px;
+  color: #555555;
+  display:block;
+  font-size: 18px;
+  font-weight: bold;
+  text-align:center;
+  margin: 0 20px;
+  margin-bottom: 10px;
+  padding: 4px 6px;
+  vertical-align: middle;
+  text-decoration:none;
+}
+
+.pagination button:hover, 
+.pagination button:focus {
+   border-color: #000000;
+   box-shadow: 0 0 15px #1E90FF;;
+   outline: 0 none;
 }
 
 .all-blocks {
@@ -501,14 +533,19 @@ h2 {
 .block3,
 .block4 {
   width: auto;
-  border: 2px solid #1E90FF;
-   border-bottom: none; 
+  border: 2px solid #1E90FF; 
   margin: 0 auto;
   padding: 30px 0;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+.block2,
+.block3,
+.block4 {
+  display: none;
 }
 
 .block4{
@@ -550,10 +587,44 @@ h2 {
   font-size: 22px;
   font-weight: bold;
   padding: 15px 0;
+} 
+
+.button_input {
+  width: auto;
+  padding: 50px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
+#save_input {
+  cursor: pointer;
+  width: 200px;
+  height: 60px;
+  border: none;
+  background-color: #00FF2A;
+  border: 2px solid #000000;
+  transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+  border-radius: 4px;
+  color: #000000;
+  display:block;
+  font-size: 22px;
+  font-weight: bold;
+  text-align:center;
+  margin: 0 20px;
+  margin-bottom: 10px;
+  padding: 4px 6px;
+  vertical-align: middle;
+  text-decoration:none;
+}
 
-
+#save_input:hover,
+#save_input:focus {
+border-color: #FFFFFF;
+   box-shadow: 0 0 15px #00FF2A;;
+   outline: 0 none;
+   color: #FFFFFF;
+}
 /*content end*/
 
 
