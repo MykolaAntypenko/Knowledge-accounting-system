@@ -156,14 +156,10 @@ nav.stroke ul li .btn:hover {
 
 }
 
-
-
-
-
 .about_project {
   color: #FFFFFF;
   width: auto;
-  margin: 0 1.5rem;
+  margin: 0 40px 0 0;
   font-family: 'Lato', sans-serif;
   font-size: 1rem;
   text-decoration: none;
@@ -236,6 +232,7 @@ nav.stroke ul li .btn:hover {
   border-top: none; 
   border-bottom: none;
   justify-content: center;
+  padding-top: 120px;
 }
 
 .out_data {

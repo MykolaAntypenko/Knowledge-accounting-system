@@ -5,7 +5,7 @@
 	font-family: 'Lato', sans-serif;
 }
 
-/*#preloader{
+#preloader{
 position: fixed;
 left: 0;
 top: 0;
@@ -39,7 +39,7 @@ height: 41px;
 background: url(images/oval.svg) center center no-repeat;
 background-size:41px;    
 margin: -16px 0 0 -16px;}
-*/
+
 .menu_fixed {
 	display: flex;
 	flex-direction: row;

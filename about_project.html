@@ -9,18 +9,18 @@
 	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
 		<script type="text/javascript" src="js/slaider.js"></script>
 	<script type="text/javascript">
-		/*$(window).on('load', function () {
+		$(window).on('load', function () {
     	var $preloader = $('#preloader'),
         $animation = $preloader.find('.animation');
     	$animation.fadeOut();
     	$preloader.delay(500).fadeOut('slow');
-		});*/
+		});
 	</script>
 
 	<script type="text/javascript" src="js/slaider.js"></script>
 </head>
 <body>
-	<!--<div id="preloader"><div class="contpre"><span class="animation"></span><br>Loading<br><br><br><img src="img/832.gif"></div></div>-->
+	<div id="preloader"><div class="contpre"><span class="animation"></span><br>Loading<br><br><br><img src="img/832.gif"></div></div>
 	<header>
 		<div class="menu_fixed">	
 			<a href="about_project.html" class="logo"><img src="img/logo.png" alt="Improve your knowledge" class="logo" onmouseover="this.src='img/logo_hover.png';"  
@@ -43,27 +43,13 @@
 		<li><a href="#" onclick="openMenu('sub_menu_3');return(false)" class="language">Choose&nbsp;&nbsp;<i class="fa fa-globe" aria-hidden="true"></i></a>
 			<ul id="sub_menu">
 				<li><a href="#">English</a></li>
-				<li><a href="#" onclick="window.open('http://translate.google.com/translate?u='+encodeURIComponent(location.href)+'&langpair=id%cen&ru=en&sl=ru&tl=ua');"
->Українська</a></li>
-				<li><a href="#" onclick="window.open('http://translate.google.com/translate?u='+encodeURIComponent(location.href)+'&langpair=id%cen&ru=en&sl=ru&tl=ru');"
->Російська</a></li>
+				<li><a href="#" onclick="window.open('http://translate.google.com/translate?u='+encodeURIComponent(location.href)+'&langpair=id%cen&ru=en&sl=ru&tl=ua');">Українська</a></li>
+				<li><a href="#" onclick="window.open('http://translate.google.com/translate?u='+encodeURIComponent(location.href)+'&langpair=id%cen&ru=en&sl=ru&tl=ru');">Російська</a></li>
 			</ul>
 		</li>
 	</ul>
 </div>
-			<!--
-			 <div id="nav">
-        <div class="menu-item">
-           Choose&nbsp;&nbsp;<i class="fa fa-globe" aria-hidden="true"></i>
-            <div class="submenu">
-               <ul>
-               	<li><a href="#">English</li>
-               	<li><a href="#">Українська</li>
-               	<li><a href="#">Російська</li>
-               </ul>
-            </div>
-        </div>
-    </div>-->
+
 			<a href="registration.html" class="btn-join">Join</a>
 		</div>
 	</header>

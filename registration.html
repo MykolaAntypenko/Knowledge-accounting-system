@@ -4,93 +4,30 @@
     <meta charset="UTF-8" />
     <title>Upgradement Registration</title>
     <link rel="stylesheet" type="text/css" href="css/registration/style.css" />
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
 </head>
 <body>
-<!--
-    <div class="materialContainer">
-         <div class="box">
-            <form class='formWithValidation'>
-            <div class="title">LOGIN</div>
-                <div class="input">
-                    <label for="name">Your name</label>
-                    <input type="text" name="name" id="name" required="" minlength="3" maxlength="25">
-                    <span class="spin"></span>
-                </div>
-                <div class="input">
-                    <label for="pass">Password</label>
-                    <input type="password" name="pass" id="pass" required="" minlength="8" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$">
-                   <div class="help">Contains at least 8 characters, <br>
-                                    Contain at least 1 digit, <br>
-                                    Contain at least one lowercase character (a-z),<br>
-                                    Contain at least 1 uppercase character (A-Z)</div>
-                 
-                  <div class="cb"></div>
-                    <span class="spin"></span>
-                </div>
-                <div class="button login">
-                <button class='validateBtn' type="submit"><span>LOGIN</span> <i class="fa fa-check"></i></button>
-                </div>
-                <div class="sign_login">
-                    <p class="sign">If you are not already registered, click on the plus to go to the registration</p>
-                </div>
-            </form>
-            </div>        
-            <div class="overbox">
-                <div class="material-button alt-2"><span class="shape"></span></div>
-                <form class='formWithValidation'>
-                    <div class="title">JOIN</div>
-                        <div class="input">
-                            <label for="regname">Your name</label>
-                            <input type="text" name="regname" id="regname" required="">
-                            <span class="spin"></span>
-                        </div>
-                        <div class="input">
-                            <label for="email">Email</label>
-                            <input type="text" name="email" id="email" required="" pattern="^ [а-z0-9] [- а-z0-9._] + @([- а-z0-9] +. ) + [AZ] {2,5} $">
-                            <span class="spin"></span>
-                        </div>
-                        <div class="input">
-                    <label for="regpass">Password</label>
-                    <input type="password" name="regpass" id="regpass" required="" minlength="8" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$">
-                   <div class="help_password">Contains at least 8 characters, <br>
-                                    Contain at least 1 digit, <br>
-                                    Contain at least one lowercase character (a-z),<br>
-                                    Contain at least 1 uppercase character (A-Z)</div>
-                 
-                  <div class="cb1"></div>
-                    <span class="spin"></span>
-                </div>
-                       
-                        <div class="button">
-                            <div class="button-join">
-                                <button class="button_join" type="submit"><span>JOIN</span></button>
-                            </div>
-                    </div>
-                </form>
-                </div>
-
-            </div>-->
      <div class="registration_page">    
-        <div class="form">
-        
+        <div class="form">    
           <form class="sign-up" id="form">
-    <h1 class="sign-up-title">JOIN</h1>
-    <input type="text" class="sign-up-input" placeholder="Your name" autofocus required="" id="name">
-    <input type="email" class="sign-up-input" placeholder="Email" required="" pattern="^ [а-z0-9] [- а-z0-9._] + @([- а-z0-9] +. ) + [AZ] {2,5} $" id="email">
-    <div class="input">
-    <input type="password" class="sign-up-input" placeholder="Password" required="" minlength="8" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$" id="password">
-    <div class="help">Contains at least 8 characters, <br>
+                <h1 class="sign-up-title">JOIN</h1>
+                <input type="text" class="sign-up-input" placeholder="Your name" autofocus required="" id="name" pattern="^[a-z ,.'-A-ZА-Яа-я]+$">
+                <input type="email" class="sign-up-input" placeholder="Email" required="" pattern="^ [а-z0-9] [- а-z0-9._] + @([- а-z0-9] +. ) + [AZ] {2,5} $" id="email">
+                <div class="input">
+                    <input type="password" class="sign-up-input" placeholder="Password" required="" minlength="8" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$" id="password" onkeyup='check();'>
+                    <div class="help">Contains at least 8 characters, <br>
                                     Contain at least 1 digit, <br>
                                     Contain at least one lowercase character (a-z),<br>
                                     Contain at least 1 uppercase character (A-Z)</div>
                  
                   <div class="cb"></div>
-              </div>
-    <input type="password" class="sign-up-input" placeholder="Repeat password" required="" pattern="^ [а-z0-9] [- а-z0-9._] + @([- а-z0-9] +. ) + [AZ] {2,5} $">
-    <input type="submit" value="Join" class="sign-up-button">
-    <a href="login.html" class="signin">Already registered? Then sign in</a>
-  </form>
-</div>
+                </div>
+                <input type="password" class="sign-up-input" placeholder="Repeat password" required="" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$" id="confirm_password" onkeyup='check();'>
+                <span id='message'></span>
+                <input type="submit" value="Join" class="sign-up-button">
+                <a href="login.html" class="signin">Already registered? Then sign in</a>
+            </form>
+        </div>
         <div class="background" style="background-image: url(img/bg-dark-4809.png);"> 
                 <img src="img/background.png" class="back_image" />   
         </div>
@@ -109,10 +46,26 @@
         button1.addEventListener("click", userdata);
 
 
-        $( "form" ).submit(function( event ) {
+        document.getElementById("form").onsubmit = function( event ) {
   window.location.href="index.html";
   event.preventDefault();
-});
+};
+
+
+         var check = function() {
+      if (document.getElementById('password').value ==
+          document.getElementById('confirm_password').value) {
+          document.getElementById('message').style.color = 'green';
+          document.getElementById('message').innerHTML = 'The same passwords';
+          document.getElementById('message').style.fontWeight = 'bold';
+          document.getElementById('message').style.fontSize = '16px';
+      } else {
+            document.getElementById('message').style.color = 'red';
+          document.getElementById('message').innerHTML = 'Different passwords';
+          document.getElementById('message').style.fontWeight = 'bold';
+          document.getElementById('message').style.fontSize = '16px';
+      }
+  }
 
     
 </script>

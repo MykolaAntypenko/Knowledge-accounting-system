@@ -1,30 +1,62 @@
-var levelList = [];  
+//window.onload = function() {
+/*  document.getElementById("save_input").onclick = function() {
+var mess = document.getElementsByTagName('input');
+  for (var i = 0; i < mess.length; i++) {
+    if (mess[i].type === 'radio' && mess[i].checked) {
+        result = mess[i].value;
+         out();
+        localStorage.setItem('range', JSON.stringify(result)); 
+
+    }
+  }
+ // document.getElementById('result').textContent = result;
+}
+ if(localStorage.getItem('range') !=undefined) {
+  levelList = JSON.parse(localStorage.getItem('range'));
+ }
+*/
+/*var levelList = []; 
  
  if(localStorage.getItem('level') !=undefined) {
   levelList = JSON.parse(localStorage.getItem('level'));
   out();
  }
 
- document.getElementById('save_input').onclick = function() {
-  var level = document.getElementsByTagName('input').value; 
-  var temp1 = {};
-  temp1.level = level;   
-  temp1.check = false;
+ 
+ 
+ document.getElementById("save_input").onclick = function() {
+  var result = {};
+  var level = document.getElementsByTagName('input');
+  for (var i = 0; i < level.length; i++) {
+    if (level[i].type === 'radio' && level[i].checked) {
+        result = level[i].value;
+        //localStorage.setItem('range', JSON.stringify(result)); 
+
+    }
+  }
+ // document.getElementById('result').textContent = result;
+
+ 
   var i = levelList.length;
-  levelList[i] = temp1;
+
+  levelList[i] = result;
   out();
-  localStorage.setItem('level', JSON.stringify(levelList)); 
+  localStorage.range = JSON.stringify(levelList); 
+  //localStorage.setItem('skill', JSON.stringify(skillList)); 
   
  }
 
+
  function out() {
   var out1 = '';  
-  for (var key in levelList) {   
-   out1 += levelList[key].level + '<br>';   
+  //var out2 = '';
+  for (var i=0; i<levelList.length; i++) {   
+   out1 += levelList[i] + '<br>';   
   }
-  window.localStorage.range = out1;
-  //window.localStorage.targetskill = out2;
+  window.localStorage.knowledge = out1;
+
  } 
+}*/
 
 
 
@@ -101,11 +133,17 @@ if (window.localStorage.result == "undefined") {
       radios[i].checked = true;
     }
   }
+  var result;
   $('input[type="radio"]').on('change', function(){
-    window.localStorage.range =  $(this).val();
+  
+
+  window.localStorage.range =  $(this).val();
+  result += localStorage.getItem('range');
+  window.localStorage.rangees = result;
+  
     //localStorage.setItem('range', $(this).val()); 
   });
-});*/
+});
 
 //window.onload = function() {
  // var radios = document.getElementsByType("radio");

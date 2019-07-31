@@ -1,6 +1,8 @@
 /*paginator*/
 window.onload = function() {
     function hide1() {
+    document.getElementById("programs").style.border = "2px solid #000000";
+    document.getElementById("programs").style.boxShadow = "0 0 15px #1E90FF";
     document.getElementById("blocker1").style.display = "flex";
     document.getElementById("blocker2").style.display = "none";
     document.getElementById("blocker3").style.display = "none";
@@ -8,6 +10,8 @@ window.onload = function() {
 }
 
 function hide2() {
+    document.getElementById("programs").style.border = "2px solid #1E90FF";
+    document.getElementById("programs").style.boxShadow = "none";
     document.getElementById("blocker1").style.display = "none";
     document.getElementById("blocker2").style.display = "flex";
     document.getElementById("blocker3").style.display = "none";
@@ -15,6 +19,8 @@ function hide2() {
 }
 
 function hide3() {
+    document.getElementById("programs").style.border = "2px solid #1E90FF";
+    document.getElementById("programs").style.boxShadow = "none";
     document.getElementById("blocker1").style.display = "none";
     document.getElementById("blocker2").style.display = "none";
     document.getElementById("blocker3").style.display = "flex";
@@ -22,6 +28,8 @@ function hide3() {
 }
 
 function hide4() {
+    document.getElementById("programs").style.border = "2px solid #1E90FF";
+    document.getElementById("programs").style.boxShadow = "none";
     document.getElementById("blocker1").style.display = "none";
     document.getElementById("blocker2").style.display = "none";
     document.getElementById("blocker3").style.display = "none";
