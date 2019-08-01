@@ -15,7 +15,7 @@ for (i = 0; i < acc_profile.length; i++) {
     if (panel_profile.style.maxHeight){
       panel_profile.style.maxHeight = null;
     } else {
-      panel_profile.style.maxHeight = 200 + "px";
+      panel_profile.style.maxHeight = 300 + "px";
     } 
    
   });

@@ -134,7 +134,7 @@ nav.stroke ul li .btn:hover {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
-  height: 200px;
+  height: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -155,10 +155,16 @@ nav.stroke ul li .btn:hover {
 
 .my_knowledge,
 .my_traininggoal,
-.my_profile {
+.my_profile,
+.exit {
     text-transform: uppercase;
     font-weight: bold;
     padding: 10px;
+}
+
+.block_welcome span {
+  color: #FFFFFF;
+  font-size: 22px;
 }
 
 .about_project {
@@ -284,6 +290,52 @@ body {
   width: 60%;
 }
 
+#sort_block {
+  display: none; 
+}
+.sorter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding:30px;
+  border: 2px solid #1E90FF; 
+  border-bottom: none;
+}
+
+.sorter button {
+  border: none;
+  width: 250px;
+  height: 50px;
+  cursor: pointer;
+  background-color: #737373;
+  color:  #FFFFFF;
+  border: 2px solid #000000;
+  font-size: 20px;
+  font-weight: bold;
+
+}
+
+.sorter button:hover,
+.sorter button:focus {
+  background-color: #E5E1E1;
+  color: #000000;
+  border: 2px solid #000000;
+}
+
+.sorter button:hover > .fa,
+.sorter button:focus > .fa {
+  color: #000000;
+}
+
+.target_data {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
 
 .skill span{
   font-size: 22px;
@@ -311,7 +363,7 @@ body {
   transition: 0.4s;
 }
 
-.last_accordion,
+
 .last_panel {
   border-bottom: 2px solid #1E90FF;
 }

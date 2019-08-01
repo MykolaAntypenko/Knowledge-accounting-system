@@ -105,7 +105,7 @@ nav.stroke ul li .btn:hover {
   background-color: #131313;
 }
 
-.accordion {
+.accordion_menu {
   color: #FFFFFF;
   cursor: pointer;
   width: 100%;
@@ -134,7 +134,7 @@ nav.stroke ul li .btn:hover {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
-  height: 200px;
+  height: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -155,7 +155,8 @@ nav.stroke ul li .btn:hover {
 
 .my_knowledge,
 .my_traininggoal,
-.my_profile {
+.my_profile,
+.exit {
     text-transform: uppercase;
     font-weight: bold;
     padding: 10px;

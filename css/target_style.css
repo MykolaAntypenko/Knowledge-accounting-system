@@ -130,7 +130,7 @@ nav.stroke ul li .btn:hover {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
-  height: 200px;
+  height: 300px;
   display: flex;
   justify-content: center;
   align-items: center;

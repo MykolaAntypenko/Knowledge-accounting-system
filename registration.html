@@ -11,7 +11,7 @@
         <div class="form">    
           <form class="sign-up" id="form">
                 <h1 class="sign-up-title">JOIN</h1>
-                <input type="text" class="sign-up-input" placeholder="Your name" autofocus required="" id="name" pattern="^[a-z ,.'-A-ZА-Яа-я]+$">
+                <input type="text" class="sign-up-input" placeholder="Your name" autofocus required="" id="name" pattern="^[a-z A-Z]+$" maxlength="30">
                 <input type="email" class="sign-up-input" placeholder="Email" required="" pattern="^ [а-z0-9] [- а-z0-9._] + @([- а-z0-9] +. ) + [AZ] {2,5} $" id="email">
                 <div class="input">
                     <input type="password" class="sign-up-input" placeholder="Password" required="" minlength="8" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$" id="password" onkeyup='check();'>
@@ -24,7 +24,7 @@
                 </div>
                 <input type="password" class="sign-up-input" placeholder="Repeat password" required="" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$" id="confirm_password" onkeyup='check();'>
                 <span id='message'></span>
-                <input type="submit" value="Join" class="sign-up-button">
+                <input type="submit" value="Join" class="sign-up-button" id="button_submit">
                 <a href="login.html" class="signin">Already registered? Then sign in</a>
             </form>
         </div>
@@ -33,14 +33,37 @@
         </div>
 </body>
 <script type="text/javascript">
+/*   function store() {
+    localStorage.setItem('name', name.value);
+    localStorage.setItem('email', email.value);
+}
 
-    function userdata() {
+// check if stored data from register-form is equal to entered data in the   login-form
+function check() {
+
+    // stored data from the register-form
+    var storedName = localStorage.getItem('name');
+    var storedPw = localStorage.getItem('email');
+
+    // entered data from the login-form
+    var userName = document.getElementById('userName');
+    var userPw = document.getElementById('userPw');
+
+    // check if stored data from register-form is equal to data from login form
+    if(userName.value !== storedName || userPw.value !== storedPw) {
+        alert('ERROR');
+    }else {
+        alert('You are loged in.');
+    }
+}*/
+
+/*    function userdata() {
         var name = document.getElementById("name").value;
-        window.localStorage.name = name;
+        window.localStorage.nameUser = name;
         var email = document.getElementById("email").value;
-        window.localStorage.email = email;
+        window.localStorage.emailUser = email;
         var password = document.getElementById("password").value;
-        window.localStorage.password = password;
+        window.localStorage.passwordUser = password;
     }
         var button1 = document.querySelector('.sign-up-button');
         button1.addEventListener("click", userdata);
@@ -49,9 +72,49 @@
         document.getElementById("form").onsubmit = function( event ) {
   window.location.href="index.html";
   event.preventDefault();
-};
+};*/
+var nameList = []; 
+ var passwordList = []; 
+ 
+ if(localStorage.getItem('name') !=undefined) {
+  nameList = JSON.parse(localStorage.getItem('name'));
+  out();
+ }
 
+  if(localStorage.getItem('password') !=undefined) {
+ passwordList = JSON.parse(localStorage.getItem('password'));
+  out();
+ }
+ 
+ document.getElementById('button_submit').onclick = function() {
+  var name = document.getElementById('name').value; 
+  var password = document.getElementById('password').value;
+  var temp1 = {};
+  var temp2 = {};
+  temp1.name = name;  
+  var i = nameList.length;
+  temp2.password = password;   
+  var j = passwordList.length;
+  nameList[i] = temp1;
+  passwordList[j] = temp2;
+  out();
+  localStorage.setItem('name', JSON.stringify(nameList)); 
+  localStorage.setItem('password', JSON.stringify(passwordList)); 
+  
+ }
 
+ function out() {
+  var out1 = '';  
+  var out2 = '';
+  for (var key in nameList) {   
+   out1 = nameList[key].name;   
+  }
+  for (var key in passwordList) {   
+   out2 = passwordList[key].password;   
+  }
+  window.localStorage.nameUser = out1;
+  window.localStorage.passwordUser = out2;
+ } 
          var check = function() {
       if (document.getElementById('password').value ==
           document.getElementById('confirm_password').value) {
@@ -66,7 +129,10 @@
           document.getElementById('message').style.fontSize = '16px';
       }
   }
-
+document.getElementById("form").onsubmit = function( event ) {
+ window.location.href="index.html";
+event.preventDefault();
+};
     
 </script>
 </html>

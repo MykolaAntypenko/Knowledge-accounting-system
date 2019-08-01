@@ -9,13 +9,14 @@
      <div class="registration_page">    
         <div class="form">
         
-          <form class="sign-in">
+          <form class="sign-in" id="form">
     <h1 class="sign-in-title">LOGIN</h1>
-    <input type="text" class="sign-in-input" placeholder="Your name" autofocus required="">
+    <input type="text" class="sign-in-input" placeholder="Your name" autofocus required="" id="name">
     <div class="input">
-    <input type="password" class="sign-in-input" placeholder="Password" required="" minlength="8" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$">
+    <input type="password" class="sign-in-input" placeholder="Password" required="" minlength="8" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$" id="password">
               </div>
-    <input type="submit" value="Login" class="sign-in-button">
+    <div id="failed_login"></div>
+    <input type="submit" value="Login" class="sign-in-button" id="button_login">
     <a href="registration.html" class="signin">Not yet registered? Then join us</a>
   </form>
 </div>
@@ -23,4 +24,29 @@
                 <img src="img/login.png" class="back_image" />   
         </div>
 </body>
+<script type="text/javascript">
+document.getElementById('button_login').onclick = function() {
+ var userName = document.getElementById('name').value;
+ var userPassword = document.getElementById('password').value;
+ var storedName = window.localStorage.getItem('nameUser');
+ var storedPassWord = window.localStorage.getItem('passwordUser');
+ var Name = storedName;
+ var Password = storedPassWord;
+    if(userName === Name && userPassword === Password) {
+      window.location.href="index.html";
+  event.preventDefault();
+    }
+  }
+document.getElementById('name').onblur = function() { 
+var userName = document.getElementById('name').value; 
+var storedName = window.localStorage.getItem('nameUser');
+var Name = storedName;
+   if(userName != Name) {
+        document.getElementById("failed_login").innerHTML = "A user with this name is not registered, please join us";
+    }
+    else {
+      document.getElementById("failed_login").innerHTML = "";
+    }
+  }
+</script>
 </html>

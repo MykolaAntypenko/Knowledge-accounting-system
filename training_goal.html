@@ -25,12 +25,16 @@ onmouseout="this.src='img/logo.png';"/></a>
   							<a href="knowledge.html" class="my_knowledge">My knowledge</a>
                             <a href="training_goal.html" class="my_traininggoal" style="background-color: #131313;">My training goal</a>
                              <a href="#" class="my_profile">Information</a>
+                             <a href="login.html" class="exit">Exit</a>
 					</div>
 				</li>
 				<li class="menu__item">
 					<a href="training.html" class="btn">Training</a>
 				</li>
 			</ul>
+			<div class="block_welcome"> 
+                <span id="name_user"></span>
+            </div>
 			<div class="about">
 				<a href="about_project.html" target="_blank" class="about_project outline-inward">About this project&nbsp;&nbsp;<i class="fa fa-question-circle" aria-hidden="true"></i></a>
 			</div>
@@ -99,7 +103,7 @@ for (i = 0; i < acc_profile.length; i++) {
     if (panel_profile.style.maxHeight){
       panel_profile.style.maxHeight = null;
     } else {
-      panel_profile.style.maxHeight = 200 + "px";
+      panel_profile.style.maxHeight = 300 + "px";
     } 
    
   });
@@ -108,4 +112,5 @@ for (i = 0; i < acc_profile.length; i++) {
 
 
 </script>
+<script type="text/javascript" src="js/welcome.js"></script>
 </html>

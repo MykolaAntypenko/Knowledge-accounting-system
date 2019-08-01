@@ -19,10 +19,8 @@
   var temp1 = {};
   var temp2 = {};
   temp1.level = level;   
-  temp1.check = false;
   var i = levelList.length;
   temp2.skill = skill;   
-  temp2.check = false;
   var j = skillList.length;
   levelList[i] = temp1;
   skillList[j] = temp2;
@@ -36,13 +34,16 @@
   var out1 = '';  
   var out2 = '';
   for (var key in levelList) {   
-   out1 += levelList[key].level + '<br>';   
+   out1 += levelList[key].level + '<br>';
+   
   }
   for (var key in skillList) {   
    out2 += skillList[key].skill + '<br>';   
+ 
   }
   window.localStorage.targetlevel = out1;
   window.localStorage.targetskill = out2;
+
  } 
 function save() {
             var div = document.getElementById('savemessage');

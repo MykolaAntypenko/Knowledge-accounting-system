@@ -56,6 +56,11 @@ html {
     transition: all 0.5s 0s;
     z-index: 1000;
 }
+input[type='text']:focus,
+input[type='email']:focus,
+input[type='password']:focus  {
+  background-color: #DFFFE7;
+}
 
 .signin {
 	font-size: 20px;

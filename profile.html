@@ -24,12 +24,16 @@ onmouseout="this.src='img/logo.png';"/></a>
                             <a href="#" class="my_knowledge" style="background-color: #131313;">My knowledge</a>
                             <a href="training_goal.html" class="my_traininggoal">My training goal</a>
                              <a href="#" class="my_profile">Information</a>
+                             <a href="login.html" class="exit">Exit</a>
                     </div>
                 </li>
                 <li class="menu__item">
                     <a href="training.html" class="btn">Training</a>
                 </li>
             </ul>
+            <div class="block_welcome"> 
+                <span id="name_user"></span>
+            </div>
             <div class="about">
                 <a href="about_project.html" target="_blank" class="about_project outline-inward">About this project&nbsp;&nbsp;<i class="fa fa-question-circle" aria-hidden="true"></i></a>
             </div>
@@ -40,10 +44,14 @@ onmouseout="this.src='img/logo.png';"/></a>
             <div class="header_knowledge">
                 <h1 class="knowledge_sign">Here you can see the skills you have chosen in different grouped industries. In order to develop your skills, please indicate the purpose of the training and on the Training tab you will find materials that will help you become a high-quality specialist.</h1>
             </div>
-            <p class="paragraph_skill">Professional skills</p>
-            <div id="result">
+            <p class="paragraph_skill">Profile</p>
+            <div id="profile">
+                <span>Name</span>
+                <span id="name_profile"></span>
+                <span>Email</span>
+                <span id="email_profile"></span>
             </div>
-            <a class="back_to_top" title="Наверх">&uarr;</a>
+            <a class="back_to_top" title="Up">&uarr;</a>
         </div>
     </section>
     <footer>
@@ -87,5 +95,12 @@ for (i = 0; i < acc_profile.length; i++) {
 }
 
 </script>
+<script type="text/javascript">
+    var name_profile = window.localStorage.getItem("name");
+    document.getElementById("name_profile").innerHTML = name_profile;
+    var email_profile = window.localStorage.getItem("email");
+    document.getElementById("email_profile").innerHTML = email_profile;
+</script>
 <script type="text/javascript" src="js/scroll.js"></script>
+<script type="text/javascript" src="js/welcome.js"></script>
 </html>
