@@ -8,14 +8,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
 		<script type="text/javascript" src="js/slaider.js"></script>
-	<script type="text/javascript">
-		$(window).on('load', function () {
-    	var $preloader = $('#preloader'),
-        $animation = $preloader.find('.animation');
-    	$animation.fadeOut();
-    	$preloader.delay(500).fadeOut('slow');
-		});
-	</script>
+	<script type="text/javascript" src="js/preloader.js">	</script>
 
 	<script type="text/javascript" src="js/slaider.js"></script>
 </head>
@@ -43,8 +36,8 @@
 		<li><a href="#" onclick="openMenu('sub_menu_3');return(false)" class="language">Choose&nbsp;&nbsp;<i class="fa fa-globe" aria-hidden="true"></i></a>
 			<ul id="sub_menu">
 				<li><a href="#">English</a></li>
-				<li><a href="#" onclick="window.open('http://translate.google.com/translate?u='+encodeURIComponent(location.href)+'&langpair=id%cen&ru=en&sl=ru&tl=ua');">Українська</a></li>
-				<li><a href="#" onclick="window.open('http://translate.google.com/translate?u='+encodeURIComponent(location.href)+'&langpair=id%cen&ru=en&sl=ru&tl=ru');">Російська</a></li>
+				<li><a href="#">Українська</a></li>
+				<li><a href="#">Російська</a></li>
 			</ul>
 		</li>
 	</ul>
@@ -159,31 +152,6 @@ processing and efficient data visualization.</li>
 		</div>
 
 	</footer>
-	<!--<div id="openRegistration" class="modalDialog">
-
-		<div class="registration">	
-			<a href="#close" title="Close" class="close">X</a>
-			<form>
-	  		
-	  			<input checked="" id="join" name="action" type="radio" value="join">
-	  			<label for="join">Join</label>
-	  		
-	  			<input  id="login" name="action" type="radio" value="Login">
-	  			<label for="login">Login</label>
-	  			<div id="wrapper">
-	    			<input id="email" placeholder="Email" type="text">
-	    			<input id="phone" placeholder="Phone" type="tel">
-	    			<input id="pass" placeholder="Password" type="password">
-	    			<input id="repass" placeholder="Repeat password" type="password">
-	  			</div>
-	  			<button type="submit">
-	    		
-	      		Join
-	 
-	  		</button>
-			</form>
-		</div>
-	</div>-->
 </body>
 
 <script type="text/javascript">

@@ -5,6 +5,7 @@
 	<title>Upgradement</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/knowledge_style.css">
+    <link rel="stylesheet" type="text/css" href="css/profile_style.css">
 	<link rel="shortcut icon" href="img/favicon.png"/>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 	<meta name="keywords" content="Knowledge, Training, Personal Plan, Skills">
@@ -21,10 +22,10 @@ onmouseout="this.src='img/logo.png';"/></a>
                 <li class="menu__item">
                     <p  class="btn accordion_menu">My profile</p>
                     <div class="panel_menu">
-                            <a href="#" class="my_knowledge" style="background-color: #131313;">My knowledge</a>
-                            <a href="training_goal.html" class="my_traininggoal">My training goal</a>
-                             <a href="#" class="my_profile">Information</a>
-                             <a href="login.html" class="exit">Exit</a>
+                        <a href="#" class="my_knowledge">My knowledge</a>
+                        <a href="training_goal.html" class="my_traininggoal">My training goal</a>
+                        <a href="#" class="my_profile" style="background-color: #131313;">Information</a>
+                        <a href="login.html" class="exit" >Exit</a>
                     </div>
                 </li>
                 <li class="menu__item">
@@ -40,31 +41,72 @@ onmouseout="this.src='img/logo.png';"/></a>
         </nav>
     </header>
     <section>
-        <div class="container">
-            <div class="header_knowledge">
-                <h1 class="knowledge_sign">Here you can see the skills you have chosen in different grouped industries. In order to develop your skills, please indicate the purpose of the training and on the Training tab you will find materials that will help you become a high-quality specialist.</h1>
+        <div class="container container_profile">
+            <div class="header_profile">
+                <h1 class="header_sign">View your profile information here</h1>
             </div>
+        <div class="profile_form">
             <p class="paragraph_skill">Profile</p>
+            <p class="personal">Personal information</p>
             <div id="profile">
-                <span>Name</span>
+                <span><strong style="font-size: 20px">Name:</strong>&nbsp;&nbsp;</span>
                 <span id="name_profile"></span>
-                <span>Email</span>
+                <br>
+                <span><strong style="font-size: 20px">Email:</strong>&nbsp;&nbsp;</span>
                 <span id="email_profile"></span>
             </div>
+            <div class="personal_information">
+                <form >
+                    <div class="gender">
+                        <label class="text"><strong>Gender: </strong>&nbsp;&nbsp;</label>
+                        <select id="gender">
+                            <option>Male</option>
+                            <option>Female</option>
+                        </select>
+                    </div>
+                    <br>
+                    <div class="birth">
+                        <label class="text"><strong>Date of Birth:</strong>&nbsp;&nbsp;&nbsp;</label>
+                        <input type="date" id="date">
+                    </div>
+                <p class="contact">Contact information</p>
+                <div class="address">
+                        <label class="text"><strong>Address: </strong>&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                        <input type="text" id="address">
+                    </div>
+                    <div class="city">
+                        <label class="text"><strong>City: </strong>&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                        <input type="text" id="city">
+                    </div>  
+                    <div class="country">
+                        <label class="text"><strong>Country: </strong>&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                        <input type="text" id="country">
+                    </div>  
+                    <div class="button">
+                        <button type="submit" id="button_profile">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
             <a class="back_to_top" title="Up">&uarr;</a>
         </div>
     </section>
     <footer>
         <div class="wrapper">
+            <div class="allaround">
+                <h4 class="around">Around the Web</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                </div>
+            </div>
             <div class="text-block">    
                 <h1 class="footer_sign">Upgradement</h1>
                 <p class="footer_text">All materials posted on this site are copyright. If you want to use them in any way on your resources, you need to get the written prior permission of the author.</p>
             </div>
             <div class="contacts">
-                <h1 class="footer_contacts">Contacts</h1>
-                <a href="#" class="mail"><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;upgradement@.online</a>   
-                <p class="phone"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;&nbsp;+380997556678</p>
-                <p class="phone"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;&nbsp;+380685534629</p>
+                <a href="contacts.html" class="footer_contacts">Contacts</a>
         </div>
         </div>
         <div class="footer_copyright">  
@@ -88,7 +130,7 @@ for (i = 0; i < acc_profile.length; i++) {
     if (panel_profile.style.maxHeight){
       panel_profile.style.maxHeight = null;
     } else {
-      panel_profile.style.maxHeight = 200 + "px";
+      panel_profile.style.maxHeight = 300 + "px";
     } 
    
   });
@@ -96,10 +138,27 @@ for (i = 0; i < acc_profile.length; i++) {
 
 </script>
 <script type="text/javascript">
-    var name_profile = window.localStorage.getItem("name");
+    var name_profile = window.localStorage.getItem("nameRegister");
     document.getElementById("name_profile").innerHTML = name_profile;
-    var email_profile = window.localStorage.getItem("email");
+    var email_profile = window.localStorage.getItem("emailRegister");
     document.getElementById("email_profile").innerHTML = email_profile;
+</script>
+<script type="text/javascript">
+    function profiledata() {
+        var gender = document.getElementById("gender").value;
+        window.localStorage.gender = gender;
+        var date = document.getElementById("date").value;
+        window.localStorage.date = date;
+        var address = document.getElementById("address").value;
+        window.localStorage.address = address;
+        var country = document.getElementById("country").value;
+        window.localStorage.country = country;
+        var city = document.getElementById("city").value;
+        window.localStorage.city = city;
+    }
+        var button1 = document.querySelector('#button_profile');
+        button1.addEventListener("click", profiledata);
+
 </script>
 <script type="text/javascript" src="js/scroll.js"></script>
 <script type="text/javascript" src="js/welcome.js"></script>

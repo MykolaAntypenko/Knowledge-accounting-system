@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <title>Upgradement Registration</title>
+    <link rel="shortcut icon" href="img/favicon.png"/>
     <link rel="stylesheet" type="text/css" href="css/registration/style.css" />
     <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
 </head>
@@ -33,37 +34,14 @@
         </div>
 </body>
 <script type="text/javascript">
-/*   function store() {
-    localStorage.setItem('name', name.value);
-    localStorage.setItem('email', email.value);
-}
 
-// check if stored data from register-form is equal to entered data in the   login-form
-function check() {
-
-    // stored data from the register-form
-    var storedName = localStorage.getItem('name');
-    var storedPw = localStorage.getItem('email');
-
-    // entered data from the login-form
-    var userName = document.getElementById('userName');
-    var userPw = document.getElementById('userPw');
-
-    // check if stored data from register-form is equal to data from login form
-    if(userName.value !== storedName || userPw.value !== storedPw) {
-        alert('ERROR');
-    }else {
-        alert('You are loged in.');
-    }
-}*/
-
-/*    function userdata() {
+   function userdata() {
         var name = document.getElementById("name").value;
-        window.localStorage.nameUser = name;
+        window.localStorage.nameRegister = name;
         var email = document.getElementById("email").value;
-        window.localStorage.emailUser = email;
+        window.localStorage.emailRegister = email;
         var password = document.getElementById("password").value;
-        window.localStorage.passwordUser = password;
+        window.localStorage.passwordRegister = password;
     }
         var button1 = document.querySelector('.sign-up-button');
         button1.addEventListener("click", userdata);
@@ -72,7 +50,7 @@ function check() {
         document.getElementById("form").onsubmit = function( event ) {
   window.location.href="index.html";
   event.preventDefault();
-};*/
+};
 var nameList = []; 
  var passwordList = []; 
  

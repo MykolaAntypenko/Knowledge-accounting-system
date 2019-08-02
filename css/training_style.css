@@ -539,7 +539,15 @@ body {
 
 .footer_contacts {
   font-size: 2rem;
+  font-weight: bold;
   margin-bottom: 1rem; 
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.footer_contacts:hover {
+  color: #F1FBED;
+  text-decoration: underline;
 }
 
 .mail {

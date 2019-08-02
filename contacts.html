@@ -2,15 +2,14 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Upgradement</title>
+	<title>Upgradement</title> 
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/knowledge_style.css">
+    <link rel="stylesheet" type="text/css" href="css/contacts_style.css">
 	<link rel="shortcut icon" href="img/favicon.png"/>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 	<meta name="keywords" content="Knowledge, Training, Personal Plan, Skills">
 	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-
-
+    <script type="text/javascript" src="js/accordion.js"></script>
 </head>
 <body>
 	<header>
@@ -21,7 +20,7 @@ onmouseout="this.src='img/logo.png';"/></a>
                 <li class="menu__item">
                     <p  class="btn accordion_menu">My profile</p>
                     <div class="panel_menu">
-                            <a href="#" class="my_knowledge" style="background-color: #131313;">My knowledge</a>
+                            <a href="knowledge.html" class="my_knowledge">My knowledge</a>
                             <a href="training_goal.html" class="my_traininggoal">My training goal</a>
                              <a href="profile.html" class="my_profile">Information</a>
                              <a href="login.html" class="exit">Exit</a>
@@ -39,18 +38,26 @@ onmouseout="this.src='img/logo.png';"/></a>
             </div>
         </nav>
     </header>
-    <section>
-        <div class="container">
-            <div class="header_knowledge">
-                <h1 class="knowledge_sign">Here you can see the skills you have chosen in different grouped industries. In order to develop your skills, please indicate the purpose of the training and on the Training tab you will find materials that will help you become a high-quality specialist.</h1>
-            </div>
-            <div class="knowledge_information">
-                <p class="paragraph_skill">Professional skills</p>
-                <div id="result">
+   <section>
+        <div class="container_contacts">
+            <div class="contacts_block">
+                <div class="email">
+                    <p class="contacts_sign">Email</p>    
+                    <a href="#" class="mail"><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;upgradement@.online</a>
+                </div> 
+                <div class="phones">
+                    <p class="contacts_sign">Contact telephones</p>
+                    <p class="phone"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;&nbsp;+380997556678</p>
+                    <p class="phone"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;&nbsp;+380685534629</p>
                 </div>
             </div>
-            <a class="back_to_top" title="Up">&uarr;</a>
-        </div>
+            <div class="mapouter">
+                <h1 class="location">Our location</h1>
+                <div class="gmap_canvas">
+                    <iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=Kyiv&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                    <a href="https://www.embedgooglemap.net/blog/best-wordpress-themes/">wordpress themes</a>
+                </div><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style>
+            </div>
     </section>
     <footer>
         <div class="wrapper">
@@ -75,30 +82,5 @@ onmouseout="this.src='img/logo.png';"/></a>
         </div>
     </footer>
 </body>
-<script type="text/javascript">
-    var range_list = window.localStorage.getItem("knowledge");
-    document.getElementById('result').innerHTML = range_list;
-    //acordion menu for profile
-    var acc_profile = document.getElementsByClassName("accordion_menu");
-var i;
-
-for (i = 0; i < acc_profile.length; i++) {
-  acc_profile[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var panel_profile = this.nextElementSibling;
-    panel_profile.style.position = "fixed";
-    panel_profile.style.top = 80 + 'px';
-    panel_profile.style.width = "185px";
-    if (panel_profile.style.maxHeight){
-      panel_profile.style.maxHeight = null;
-    } else {
-      panel_profile.style.maxHeight = 300 + "px";
-    } 
-   
-  });
-}
-
-</script>
-<script type="text/javascript" src="js/scroll.js"></script>
-<script type="text/javascript" src="js/welcome.js"></script>
+    
 </html>
