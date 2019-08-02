@@ -6,8 +6,16 @@
 .header_knowledge {
 	border: 2px solid #1E90FF;
 	border-top: none;
-	padding: 40px;
-	padding-top: 160px;
+	padding: 60px;
+	padding-top: 180px;
+}
+
+.knowledge_information {
+	padding: 40px 0;
+	border-left: 2px solid #1E90FF;
+	border-right: 2px solid #1E90FF;
+	border: 2px solid #1E90FF;
+	border-top: none;
 }
 
 .knowledge_sign {
@@ -20,15 +28,11 @@
 	font-size: 20px;
 	padding-top: 30px;
 	padding-bottom: 15px;
-	border-left: 2px solid #1E90FF;
-	border-right: 2px solid #1E90FF;
 	font-weight: bold;
 }
 
 #result {
 	font-size: 18px;
-	border: 2px solid #1E90FF;
-	border-top: none;
 	display: flex;
 	justify-content: center;
 	align-items: center;

@@ -290,6 +290,14 @@ body {
   width: 60%;
 }
 
+.sort_filter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+   border: 2px solid #1E90FF;
+   border-bottom: none; 
+}
+
 #sort_block {
   display: none; 
 }
@@ -299,8 +307,6 @@ body {
   justify-content: center;
   align-items: center;
   padding:30px;
-  border: 2px solid #1E90FF; 
-  border-bottom: none;
 }
 
 .sorter button {
@@ -328,13 +334,62 @@ body {
   color: #000000;
 }
 
+#filter_block {
+  display: none; 
+}
+.filter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding:30px;
+}
+
+.filter button {
+  border: none;
+  width: 250px;
+  height: 50px;
+  cursor: pointer;
+  background-color: #737373;
+  color:  #FFFFFF;
+  border: 2px solid #000000;
+  font-size: 20px;
+  font-weight: bold;
+
+}
+
+.filter button:hover,
+.filter button:focus {
+  background-color: #E5E1E1;
+  color: #000000;
+  border: 2px solid #000000;
+}
+
+.filter button:hover > .fa,
+.filter button:focus > .fa {
+  color: #000000;
+}
+
 .target_data {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  border: 2px solid #1E90FF;
+  border-bottom: none;
+  padding: 30px;
 }
 
+.level_sign,
+.skill_sign {
+  font-size: 20px;
+}
+
+#list_skill,
+#list_level {
+  font-size: 18px;
+  padding-top: 10px;
+}
 
 
 .skill span{

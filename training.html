@@ -43,21 +43,33 @@ onmouseout="this.src='img/logo.png';"/></a>
 			<div class="header_top">
 				<h1 class="training_sign">To achieve any goal, it is difficult to work, but any work justifies itself. So here you will find the materials you need to improve your knowledge in the various grouped industries</h1>
 			</div>
-			<div class="sorter">	
-				<button id="sort_button"><i class="fa fa-sort" aria-hidden="true"></i>&nbsp;&nbsp;Sort materials</button>
-				<div id="sort_block" style="display: none">	
-					<button class="sort_rating"><i class="fa fa-sort-numeric-asc" aria-hidden="true">&nbsp;&nbsp;</i>Sort rating</button>
-					<button class="sort_increment"><i class="fa fa-sort-alpha-asc" aria-hidden="true"></i>&nbsp;&nbsp;Sort ABC</button>
-					<button class="sort_decrement"><i class="fa fa-sort-alpha-desc" aria-hidden="true"></i>&nbsp;&nbsp;Sort DESC</button>
+			<div class="sort_filter">
+				<div class="sorter">	
+					<button id="sort_button"><i class="fa fa-sort" aria-hidden="true"></i>&nbsp;&nbsp;Sort</button>
+					<div id="sort_block">	
+						<button class="sort_rating"><i class="fa fa-sort-numeric-asc" aria-hidden="true">&nbsp;&nbsp;</i>Sort by rating</button>
+						<button class="sort_increment"><i class="fa fa-sort-alpha-asc" aria-hidden="true"></i>&nbsp;&nbsp;Sort Ascending</button>
+						<button class="sort_decrement"><i class="fa fa-sort-alpha-desc" aria-hidden="true"></i>&nbsp;&nbsp;Sort by descent</button>
+					</div>
+				</div>
+				<div class="filter">	
+					<button id="filter_button"><i class="fa fa-filter" aria-hidden="true"></i>&nbsp;&nbsp;Filter</button>
+					<div id="filter_block">	
+						<button class="filter_target">For the purpose of training</button>
+						<button class="filter_programs">Programming languages</button>
+						<button class="filter_operations">Operating Systems</button>
+						<button class="filter_platforms">Platforms</button>
+						<button class="filter_databases">Databases</button>
+					</div>
 				</div>
 			</div>
 			<div class="target_data">	
 				<div class="target_level">			
-					<h1>Your target levels</h1>
+					<h1 class="level_sign">Your target levels</h1>
 					<div id="list_level"></div>
 				</div>
 				<div class="target_skill">			
-					<h1>Your target skills</h1>
+					<h1 class="skill_sign">Your target skills</h1>
 					<div id="list_skill"></div>
 				</div>
 			</div>
@@ -417,8 +429,15 @@ onmouseout="this.src='img/logo.png';"/></a>
 			document.getElementById("sort_block").style.display = "flex";
 			document.getElementById("sort_block").style.flexDirection = "column";
 		}
-		
-
+	}
+	document.getElementById("filter_button").onclick = function() {
+		if(document.getElementById("filter_block").style.display == "flex"){
+			document.getElementById("filter_block").style.display = "none";
+		}
+		else {
+			document.getElementById("filter_block").style.display = "flex";
+			document.getElementById("filter_block").style.flexDirection = "column";
+		}
 	}
 </script>
 <script type="text/javascript">
@@ -666,76 +685,60 @@ $(".block_databases").each(function() {
 
 </script>
 <script type="text/javascript">
-$(function(){
+	$(".filter_target").on("click",function (){
 var hidden = document.getElementById("list_skill").innerHTML;
-alert(hidden);
+		$('.container1').show();
+		$('.container2').show();
+		$('.container3').show();
+		$('.container4').show();
     $('.programs').filter(function(){
-
         return !(hidden.includes($(this).data("name")));
-
     }).each(function(){
-
         $(this).hide();
-
     });
-
+    $('.operations').filter(function(){
+        return !(hidden.includes($(this).data("name")));
+    }).each(function(){
+        $(this).hide();
+    });
+    $('.platforms').filter(function(){
+        return !(hidden.includes($(this).data("name")));
+    }).each(function(){
+        $(this).hide();
+    });
+    $('.databases').filter(function(){
+        return !(hidden.includes($(this).data("name")));
+    }).each(function(){
+        $(this).hide();
+    });
 });
 
-/*  var programs = $(this).find(".programs"); 
+	$(".filter_programs").on("click",function (){
+		$('.container1').show();
+		$('.container2').hide();
+		$('.container3').hide();
+		$('.container4').hide();
+	});
 
-  
-  programs.filter(function() { 
-    var block1 = $(".programs").data("name");
-    
-    if (block1 === "C#") {
-    	programs.hide();
-    }
-});*/
-   // if (block1 < block2) return 1;
-   // return 0;
- 
-  
-/*  programs.each(function() {
-    $(this).parent().append(this);
-  });
-});
-	var program = $(".programs");
-	program.each(function() {
-    block1 = $(".programs").data("name");
-    alert(block1);
-  });*/
+	$(".filter_operations").on("click",function (){
+		$('.container2').show();
+		$('.container1').hide();
+		$('.container3').hide();
+		$('.container4').hide();
+	});
 
- /* for (var i=0; i<programs.length; i++){
-    block1[i] = $(".programs").data("name");
-     alert(block1[i]);   
-	var items_el = document.getElementById("list_skill").innerHTML;
-		if(items_el.includes(block1)) {
-    	programs[i].style.display = 'block';
-    } else {
-    	programs[i].style.display = 'none';
-    }*/
-//}
-  
- 
+	$(".filter_platforms").on("click",function (){
+		$('.container3').show();
+		$('.container1').hide();
+		$('.container2').hide();
+		$('.container4').hide();
+	});
 
-	//var elements = items_el;
-//	let result = items_el.map(a => a.skill);
-//alert(items_el);
-//var out1 = '';
-  //for (var key in items_el) {   
-   //out1 += items_el[key].skill;   
-  //}
-  //alert(out1);
-
-
-/*	console.log(this.value);
-  var items = items_el.getElementsByClassName('programs');
-  for (var i=0; i<items.length; i++) {
-  	if (items[i].classList.contains(filter_select_el)) {
-    	items[i].style.display = 'block';
-    } else {
-    	items[i].style.display = 'none';
-    }
-  }*/
+	$(".filter_databases").on("click",function (){
+		$('.container4').show();
+		$('.container1').hide();
+		$('.container2').hide();
+		$('.container3').hide();
+	});
 </script>
 </html>
