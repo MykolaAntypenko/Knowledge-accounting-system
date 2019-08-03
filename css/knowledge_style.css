@@ -38,3 +38,32 @@
 	align-items: center;
 	padding-bottom: 40px;
 }
+
+@media (max-width: 1100px) {
+ .knowledge_sign {
+ 	font-size: 20px;
+ }
+
+ .paragraph_skill{
+	font-size: 20px;
+ }
+
+ #result {
+ 	font-size: 18px;
+ }
+
+}
+
+@media (max-width: 768px) {
+ .knowledge_sign {
+ 	font-size: 18px;
+ }
+
+  .paragraph_skill{
+	font-size: 18px;
+ }
+
+ #result {
+ 	font-size: 16px;
+ }
+}

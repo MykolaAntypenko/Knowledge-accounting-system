@@ -101,7 +101,7 @@
 
 .star-rating__wrap:after{
   content: "";
-  display: table;
+  display: flex;
   clear: both;
 }
 
@@ -534,4 +534,43 @@ input{
 .rating_picture {
   width: 50px;
   height:40px;
+}
+
+
+@media (max-width: 940px) {
+.star-rating__wrap label {
+width: 90px;
+  height: 90px;
+}
+}
+
+@media (max-width: 740px) {
+.star-rating__wrap label {
+width: 70px;
+  height: 70px;
+}
+}
+
+@media (max-width: 600px) {
+.star-rating__wrap label {
+width: 70px;
+  height: 70px;
+}
+
+.rating_picture{
+width: 50px;
+  height: 50px;
+}
+}
+
+@media (max-width: 560px) {
+.star-rating__wrap label {
+width: 60px;
+  height: 60px;
+}
+
+.rating_picture{
+width: 30px;
+  height: 30px;
+}
 }

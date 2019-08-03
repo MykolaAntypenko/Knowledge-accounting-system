@@ -46,11 +46,4 @@ button2.addEventListener("click", hide2);
 button3.addEventListener("click", hide3);
 button4.addEventListener("click", hide4);
 
-/*
-var save = document.getElementById("save_input");
-function style() {
-    document.getElementById("save_input").style.border = "2px solid #00FF2A";
-    document.getElementById("save_input").style.color = "#000000";
-}
-save.addEventListener("click",style);*/
 }

@@ -12,10 +12,12 @@
 	<script type="text/javascript" src="js/modal_icon.js"></script>
 </head>
 <body>
+    <input id="menuToggle" type="checkbox">
 	<header>
         <a href="index.html" class="logo"><img src="img/logo.png" alt="Improve your knowledge" class="logo" onmouseover="this.src='img/logo_hover.png';"  
 onmouseout="this.src='img/logo.png';"/></a>
         <nav class="menu stroke">
+            <label for="menuToggle">MENU <i class="fa fa-bars" aria-hidden="true"></i></label>
             <ul class="menu__list">
                 <li class="menu__item">
                     <p  class="btn accordion_menu">My profile</p>
@@ -29,6 +31,7 @@ onmouseout="this.src='img/logo.png';"/></a>
                 <li class="menu__item">
                     <a href="training.html" class="btn">Training</a>
                 </li>
+                
             </ul>
             <div class="block_welcome"> 
                 <span id="name_user"></span>
@@ -429,7 +432,7 @@ onmouseout="this.src='img/logo.png';"/></a>
     						</div>
 					</div>
 					<div data-num=17 class="num"> 	
-						<p class="skill">XML/XSL/XSLT</p>
+						<p class="skill">XML/XSL<br>/XSLT</p>
 						<div class="star-rating">
       						<div class="star-rating__wrap">
        								 <input class="star-rating__input17" id="star-rating-517" type="radio" name="rating17" value="XML/XSL/XSLT&emsp;&emsp;&emsp;Expert">
@@ -907,7 +910,7 @@ for (i = 0; i < acc_profile.length; i++) {
     this.classList.toggle("active");
     var panel_profile = this.nextElementSibling;
     panel_profile.style.position = "fixed";
-    panel_profile.style.top = 80 + 'px';
+    panel_profile.style.marginTop = "60px";
     panel_profile.style.width = "185px";
     if (panel_profile.style.maxHeight){
       panel_profile.style.maxHeight = null;
