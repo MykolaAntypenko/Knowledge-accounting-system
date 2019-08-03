@@ -1254,6 +1254,116 @@ height: 300px;
 
 
 @media (max-width: 530px) {
+
+.about_project > span {
+  display: none;
+}
+
+.block_program > .num,
+.block_operation > .num,
+.block_platforms > .num,
+.block_databases > .num {
+  width: 100%;
+  display: flex;
+  padding: 0;
+  flex-direction: column;
+  margin: 0 auto;
+  padding-left: 0px;
+    }
+
+ .back_to_top {
+    width: 30px;
+    height: 30px;
+    right: 5px;
+  }
+
+    .pagination button {
+  cursor: pointer;
+  width: 180px;
+  height: 50px;
+  font-size: 12px;
+  margin: 0 5px;
+  display: inline-block;
+  }
+}
+
+@media (max-width: 420px) {
+  #menuToggle:checked + header .menu .menu__list .menu__item{
+    padding: 0; 
+  }
+
+  #menuToggle:checked + header .menu .menu__list .menu__item p{
+    font-size: 16px;
+  }
+
+  #menuToggle:checked + header .menu .menu__list .menu__item a{
+    font-size: 16px;
+  }
+
+  .target {
+    width: 85%;
+  }
+
+  .level1,
+  .level2,
+  .level3,
+  .level4,
+  .level5 {
+  width: 80%;
+  padding-right: 0;
+  padding-left: 0;
+  margin: 0;
+} 
+
+.describe {
+    text-align: left;
+    font-size: 16px;
+}
+
+.block_program > .num,
+.block_operation > .num,
+.block_platforms > .num,
+.block_databases > .num {
+  width: 100%;
+  display: flex;
+  padding: 0;
+  flex-direction: column;
+  margin: 0 auto;
+  padding-left: 0px;
+    }
+
+    .pagination button {
+  cursor: pointer;
+  width: 90px;
+  height: 50px;
+  font-size: 12px;
+  margin: 0 5px;
+  display: inline-block;
+  }
+}
+
+
+@media (max-width: 360px) {
+
+  .level1,
+  .level2,
+  .level3,
+  .level4,
+  .level5 {
+  width: 80%;
+  padding-right: 0;
+  padding-left: 0;
+  margin: 0 ;
+} 
+
+.describe {
+    text-align: left;
+}
+
+.skill {
+  font-size: 18px;
+}
+
 .block_program > .num,
 .block_operation > .num,
 .block_platforms > .num,
@@ -1270,9 +1380,24 @@ height: 300px;
   cursor: pointer;
   width: 180px;
   height: 50px;
-  font-size: 12px;
+  font-size: 10px;
   margin: 0 5px;
+  padding: 0;
   display: inline-block;
   }
+
+  .around {
+    font-size: 20px;
+  }  
+  .footer_sign{
+  font-size: 20px;
+  }
+
+  .footer_text {
+    font-size: 18px;
+  }
+.footer_contacts {
+  font-size: 20px;
+}
 }
 
