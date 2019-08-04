@@ -14,12 +14,14 @@
 	<script type="text/javascript" src="js/slaider.js"></script>
 </head>
 <body>
+	<input id="menuToggle" type="checkbox">
 	<div id="preloader"><div class="contpre"><span class="animation"></span><br>Loading<br><br><br><img src="img/832.gif"></div></div>
-	<header>
+
 		<div class="menu_fixed">	
 			<a href="about_project.html" class="logo"><img src="img/logo.png" alt="Improve your knowledge" class="logo" onmouseover="this.src='img/logo_hover.png';"  
 			onmouseout="this.src='img/logo.png';"/></a>
 			<nav class="menu stroke">
+				<label for="menuToggle">MENU <i class="fa fa-bars" aria-hidden="true"></i></label>
 				<ul class="menu__list">
 					<li class="menu__item">
 						<a href="#about_project"  class="btn" style="text-transform: uppercase;">What is this project </a>
@@ -34,7 +36,7 @@
 			</nav>
 			<div id="menu_body">
 	<ul>
-		<li><a href="#" onclick="openMenu('sub_menu_3');return(false)" class="language">Choose&nbsp;&nbsp;<i class="fa fa-globe" aria-hidden="true"></i></a>
+		<li><a href="#" class="language">Choose&nbsp;&nbsp;<i class="fa fa-globe" aria-hidden="true"></i></a>
 			<ul id="sub_menu">
 				<li><a href="#">English</a></li>
 				<li><a href="#">Українська</a></li>
@@ -46,7 +48,7 @@
 
 			<a href="registration.html" class="btn-join">Join</a>
 		</div>
-	</header>
+
 	<section class="page1">
 		<div class="container">
 			<div class="main-text">
@@ -154,28 +156,14 @@ processing and efficient data visualization.</li>
 
 	</footer>
 </body>
-
 <script type="text/javascript">
-var id_menu = new Array('sub_menu_1','sub_menu_2','sub_menu_3');
-startList = function allclose() {
-	for (i=0; i < id_menu.length; i++){
-		document.getElementById(id_menu[i]).style.display = "none";
-	}
-}
-function openMenu(id){
-	for (i=0; i < id_menu.length; i++){
-		if (id != id_menu[i]){
-			document.getElementById(id_menu[i]).style.display = "none";
-		}
-	}
-	if (document.getElementById(id).style.display == "block"){
-		document.getElementById(id).style.display = "none";
-	}else{
-		document.getElementById(id).style.display = "block";
-	}
-}
-window.onload=startList;
+	$(function(){
+  $('a[href^="#"]').on('click', function(event) {
+    event.preventDefault();
+    var sc = $(this).attr("href"),
+        dn = $(sc).offset().top;
+    $('html, body').animate({scrollTop: dn}, 1000);
+  });
+});
 </script>
-
-
 </html>
