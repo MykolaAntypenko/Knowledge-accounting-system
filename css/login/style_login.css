@@ -10,23 +10,19 @@ body {
 
 body,
 html {
-   overflow: hidden;
+   overflow: auto;
 }
 
 .registration_page {
-	display: flex;
+  
+  display: flex;
   flex: 1 0 0;
   flex-direction: row;
   flex-wrap: wrap;
-    position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   margin: 0 auto;
   background-color: #FFFFFF;
-    
-
 }
 
 
@@ -214,4 +210,37 @@ input[type='password']:focus  {
 ::-moz-focus-inner {
   border: 0;
   padding: 0;
+}
+
+
+ @media (max-width: 992px) {
+    .background {
+
+  display: none;
+
+}
+
+
+ .form {
+  width: 70%;
+  margin: 0 auto;
+ }
+}
+
+@media (max-width: 768px) {
+
+ .form {
+  width: 80%;
+  margin: 0 auto;
+ }
+}
+
+@media (max-width: 568px) {
+ .form {
+  width: 90%;
+  margin: 0 auto;
+ }
+
+}
+
 }

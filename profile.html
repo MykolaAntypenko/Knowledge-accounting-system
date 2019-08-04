@@ -39,7 +39,7 @@ onmouseout="this.src='img/logo.png';"/></a>
                 <span id="name_user"></span>
             </div>
             <div class="about">
-                <a href="about_project.html" target="_blank" class="about_project outline-inward">About this project&nbsp;&nbsp;<i class="fa fa-question-circle" aria-hidden="true"></i></a>
+                <a href="about_project.html" target="_blank" class="about_project outline-inward"><span>About this project</span>&nbsp;&nbsp;<i class="fa fa-question-circle" aria-hidden="true"></i></a>
             </div>
         </nav>
     </header>
@@ -52,10 +52,10 @@ onmouseout="this.src='img/logo.png';"/></a>
             <p class="paragraph_skill">Profile</p>
             <p class="personal">Personal information</p>
             <div id="profile">
-                <span><strong style="font-size: 20px">Name:</strong>&nbsp;&nbsp;</span>
+                <span><strong>Name:</strong>&nbsp;&nbsp;</span>
                 <span id="name_profile"></span>
                 <br>
-                <span><strong style="font-size: 20px">Email:</strong>&nbsp;&nbsp;</span>
+                <span><strong>Email:</strong>&nbsp;&nbsp;</span>
                 <span id="email_profile"></span>
             </div>
             <div class="personal_information">
@@ -128,7 +128,7 @@ for (i = 0; i < acc_profile.length; i++) {
     this.classList.toggle("active");
     var panel_profile = this.nextElementSibling;
     panel_profile.style.position = "fixed";
-    panel_profile.style.top = 80 + 'px';
+     panel_profile.style.marginTop = "60px";
     panel_profile.style.width = "185px";
     if (panel_profile.style.maxHeight){
       panel_profile.style.maxHeight = null;

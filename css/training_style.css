@@ -836,19 +836,24 @@ label[for="menuToggle"] {
 
 @media (max-width: 420px) {
   #menuToggle:checked + header .menu .menu__list .menu__item {
-    padding: 0; 
+
   }
 
   #menuToggle:checked + header .menu .menu__list .menu__item p{
     font-size: 16px;
-    padding-right: 0;
-    padding-left: 0;
+
   }
 
   #menuToggle:checked + header .menu .menu__list .menu__item a{
     font-size: 16px;
-        padding-right: 0;
-    padding-left: 0;  
+  }
+
+  a.btn {
+    text-align: left;
+  }
+
+ .menu__item {
+    margin-right: 20px;
   }
 
   .target_data {
